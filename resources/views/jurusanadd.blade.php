@@ -25,7 +25,7 @@
               <div class="card-header">
                 <h3 class="card-title">Form {{$title}}</h3>
               </div>
-              <form role="form" action="{{url('jurusan/update/')}}" method="post">
+              <form role="form" action="{{url('jurusan/store/')}}" method="post">
                   {{csrf_field()}}
                   
                   <div class="card-body row">
