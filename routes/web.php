@@ -29,5 +29,13 @@ Route::put('/siswa/update/{id}', 'DataSiswa@update');
 Route::get('/siswa/delete/{id}', 'DataSiswa@destroy');
 
 
+//Jenjang Pendidikan
+Route::get('jenjang-pendidikan', 'Jenjangpendidikan@index');
+Route::get('jenjang-pendidikan/add', 'Jenjangpendidikan@create');
+Route::post('jenjang-pendidikan/store', 'Jenjangpendidikan@store');
+Route::get('jenjang-pendidikan/edit/{id}', 'Jenjangpendidikan@edit');
+Route::put('jenjang-pendidikan/update/{id}', 'Jenjangpendidikan@update');
+Route::get('jenjang-pendidikan/delete/{id}', 'Jenjangpendidikan@destroy');
+
 
 

@@ -79,27 +79,21 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('/siswa')}}" class="nav-link">
+                <a href="{{url('/guru')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Guru</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('/kelas')}}" class="nav-link">
+                <a href="{{url('/wali-kelas')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Wali Kelas</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('/jurusan')}}" class="nav-link">
+                <a href="{{url('/jenjang-pendidikan')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Pendidikan</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/jurusan')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Status Kepegawaian</p>
                 </a>
               </li>
             </ul>
