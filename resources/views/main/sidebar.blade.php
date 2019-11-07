@@ -42,7 +42,7 @@
     </ul>
   </nav>
 
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-light-primary elevation-4">
     <a href="{{url('/')}}" class="brand-link">
       <img src="{{url('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
@@ -71,7 +71,42 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-graduation-cap"></i>
+              <p>
+                Tenaga Pendidik
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('/siswa')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Guru</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('/kelas')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Wali Kelas</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('/jurusan')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Pendidikan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('/jurusan')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Status Kepegawaian</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
               <p>
                 Siswa
                 <i class="fas fa-angle-left right"></i>
@@ -98,103 +133,45 @@
               </li>
             </ul>
           </li>
-          
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-calendar"></i>
+              <p>
+                Akademik
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('/siswa')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kalender Akademik</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('/kelas')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Jadwal Pelajaran</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
             <a href="pages/gallery.html" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
-                Gallery
+                Pengaturan
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
+          <li class="nav-item">
+            <a href="pages/gallery.html" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
               <p>
-                Mailbox
-                <i class="fas fa-angle-left right"></i>
+                Tentang Aplikasi
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inbox</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Compose</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/mailbox/read-mail.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Read</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
-              <p>
-                Pages
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Invoice</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Profile</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/e_commerce.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>E-commerce</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/projects.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Projects</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/project_add.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Project Add</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/project_edit.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Project Edit</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/project_detail.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Project Detail</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/contacts.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Contacts</p>
-                </a>
-              </li>
-            </ul>
           </li>
         </ul>
       </nav>

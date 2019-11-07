@@ -30,6 +30,7 @@
                      <h3 class="card-title">
                         <a href="{{url('/siswa/add')}}" class="btn btn-primary btn-sm pull-right">Tambah Siswa</a>
                         <a href="" class="btn btn-primary btn-sm pull-right">Export</a>
+                        <a href="" class="btn btn-primary btn-sm pull-right">Import</a>
                      </h3>
                   </div>
                   <div class="card-body">
