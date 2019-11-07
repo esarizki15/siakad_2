@@ -47,6 +47,7 @@ class DataSiswa extends Controller
         $data->alamat = $request->alamat;
         $data->kelas_id = $request->id_kelas;
         $data->jk = $request->jk;
+        $data->password = '1123';
         $data->save();
         return redirect('/siswa/add')->with('alert-success','Berhasil menyimpan data siswa'); 
     }
@@ -59,7 +60,7 @@ class DataSiswa extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -70,7 +71,10 @@ class DataSiswa extends Controller
      */
     public function edit($id)
     {
-        //
+        $title = "Perbaharui Data Siswa";
+        $siswa = Siswa::find($id);
+        $kelas = Kelas::all();
+        return view('siswaedit',compact('title','kelas','siswa'));
     }
 
     /**
@@ -82,7 +86,16 @@ class DataSiswa extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $siswa = Siswa::find($id);
+        $siswa->nis = $request->nis;
+        $siswa->nisn = $request->nisn;
+        $siswa->nama_siswa = $request->nama_siswa;
+        $siswa->alamat = $request->alamat;
+        $siswa->kelas_id = $request->id_kelas;
+        $siswa->jk = $request->jk;
+        $siswa->password = '1123';
+        $siswa->save();
+        return redirect('/siswa')->with('alert-success','Berhasil memperbaharui data siswa'); 
     }
 
     /**
@@ -93,6 +106,7 @@ class DataSiswa extends Controller
      */
     public function destroy($id)
     {
-        //
+        Siswa::find($id)->delete();
+        return redirect('siswa')->with('alert-success','Berhasil menghapus data siswa');
     }
 }

@@ -31,6 +31,7 @@
               </div>
               <form role="form" action="{{url('siswa/store')}}" method="post">
                   {{csrf_field()}}
+                  
                   <div class="card-body row">
                      <div class="form-group col-md-6">
                         <label for="exampleInputEmail1">NIS</label>

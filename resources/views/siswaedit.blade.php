@@ -30,8 +30,8 @@
                 <h3 class="card-title">Form Tambah Siswa</h3>
               </div>
               
-              <form role="form" action="{{router ('siswa.update, $siswa->id_siswa') }}" method="post">
-        
+              <form role="form" action="{{url('siswa/update/'.$siswa->siswa_id)}}" method="post">
+                  {{method_field('PUT')}}
                   {{csrf_field()}}
                   <div class="card-body row">
                      <div class="form-group col-md-6">
@@ -53,9 +53,9 @@
                      <div class="form-group col-md-6">
                         <label for="exampleInputPassword1">Kelas</label>
                         <select required name="id_kelas" class="form-control kelas">
-                           <option value="{{$siswa->id_kelas}}">Pilih Kelas</option>
+                           <option value="{{$siswa->kelas_id}}">Kelas</option>
                            @foreach($kelas as $row)
-                           <option value="{{$row->id_kelas}}">{{$row->nama_kelas}}</option>
+                           <option value="{{$row->kelas_id}}">{{$row->nama_kelas}}</option>
                            @endforeach
                         </select>
                      </div>
@@ -66,11 +66,11 @@
                      <div class="form-group col-md-6">
                         <label for="exampleInputPassword1">Jenis Kelamin</label><br>
                         <div class="custom-control custom-radio">
-                          <input value="L" <?php if($siswa->jk_siswa == 'L'){ echo "checked"; } ?> class="custom-control-input" type="radio" name="jk" value="L" id="customRadio2" name="customRadio" checked>
+                          <input value="L" <?php if($siswa->jk == 'L'){ echo "checked"; } ?> class="custom-control-input" type="radio" name="jk" value="L" id="customRadio2" name="customRadio" checked>
                           <label for="customRadio2" class="custom-control-label">Laki-laki</label>
                         </div>    
                         <div class="custom-control custom-radio">
-                          <input value="P" <?php if($siswa->jk_siswa == 'P'){ echo "checked"; } ?> class="custom-control-input" type="radio" name="jk" value="P" id="customRadio1" name="customRadio">
+                          <input value="P" <?php if($siswa->jk == 'P'){ echo "checked"; } ?> class="custom-control-input" type="radio" name="jk" value="P" id="customRadio1" name="customRadio">
                           <label for="customRadio1" class="custom-control-label">Perempuan</label>
                         </div>
                                          

@@ -25,6 +25,8 @@ Route::get('/siswa', 'DataSiswa@index');
 Route::get('/siswa/add', 'DataSiswa@create');
 Route::post('/siswa/store', 'DataSiswa@store');
 Route::get('/siswa/update/{id}','DataSiswa@edit');
+Route::put('/siswa/update/{id}', 'DataSiswa@update');
+Route::get('/siswa/delete/{id}', 'DataSiswa@destroy');
 
 
 
