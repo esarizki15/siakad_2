@@ -245,6 +245,8 @@
 <script src="{{url('dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('dist/js/demo.js')}}"></script>
+<script src="{{url('plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{url('plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
 <script>
   $(function () {
     $("#example1").DataTable();

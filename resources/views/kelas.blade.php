@@ -20,7 +20,11 @@
       <div class="container-fluid">
          <div class="row">
          <div class="col-md-12">
-         
+          @if(Session::has('alert-success'))
+                <div class="alert alert-success">
+                    <strong>{{ \Illuminate\Support\Facades\Session::get('alert-success') }}</strong>
+                </div>
+            @endif
          <div class="card">
             <div class="card-header">
                <h3 class="card-title">
@@ -45,11 +49,11 @@
                   <tr>
                      <td>{{$no++}}</td>
                      <td style="text-transform: uppercase;">{{$row->nama_kelas}}</td>
-                     <td>{{$row->jurusan->nama_jurusan}}</td>
-                     <td><span class="badge badge-primary">Belum ada Siswa</span></td>
+                     <td>{{$row->nama_jurusan}}</td>
+                     <td><span class="badge badge-primary">Aktif</span></td>
                      <td>
-                        <a href="" class="btn btn-success btn-sm">Perbaharui</a>
-                        <a href="" class="btn btn-danger btn-sm">Hapus</a>
+                        <a href="{{url('kelas/edit/'.$row->kelas_id)}}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
+                        <a href="{{url('kelas/delete/'.$row->kelas_id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
                      </td>
                   </tr>
                   @endforeach

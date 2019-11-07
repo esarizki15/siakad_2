@@ -25,17 +25,18 @@
               <div class="card-header">
                 <h3 class="card-title">Form {{$title}}</h3>
               </div>
-              <form role="form" action="{{url('kelas/store')}}" method="post">
+              <form role="form" action="{{url('kelas/update/'.$kelas->kelas_id)}}" method="post">
                   {{csrf_field()}}
+                  {{method_field('PUT')}}
                   <div class="card-body row">
                      <div class="form-group col-md-6">
                         <label for="exampleInputEmail1">Nama Kelas</label>
-                        <input style="text-transform:uppercase;" required type="text" name="nama_kelas" class="form-control" id="exampleInputEmail1" placeholder="Nama Kelas">
+                        <input value="{{$kelas->nama_kelas}}" style="text-transform:uppercase;" required type="text" name="nama_kelas" class="form-control" id="exampleInputEmail1" placeholder="Nama Kelas">
                      </div>
                      <div class="form-group col-md-6">
                         <label for="exampleInputPassword1">Pilih Jurusan</label>
                         <select name="id_jurusan" class="form-control">
-                           <option>Pilih Jurusan</option>
+                           <option value="{{$kelas->jurusan_id}}">Pilih Jurusan</option>
                            @foreach($jurusan as $row)
                            <option value="{{$row->jurusan_id}}">{{$row->singkatan}} | {{$row->nama_jurusan}}</option>
                            @endforeach
