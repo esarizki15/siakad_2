@@ -37,5 +37,13 @@ Route::get('jenjang-pendidikan/edit/{id}', 'Jenjangpendidikan@edit');
 Route::put('jenjang-pendidikan/update/{id}', 'Jenjangpendidikan@update');
 Route::get('jenjang-pendidikan/delete/{id}', 'Jenjangpendidikan@destroy');
 
+//Data Guru
+Route::get('guru','DataGuru@index');
+Route::get('guru/add','DataGuru@create');
+Route::post('guru/store','DataGuru@store');
+Route::get('guru/edit/{id}','DataGuru@edit');
+Route::put('guru/update/{id}','DataGuru@update');
+Route::get('guru/delete/{id}','DataGuru@destroy');
+
 
 

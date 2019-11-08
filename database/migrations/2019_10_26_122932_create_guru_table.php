@@ -17,10 +17,10 @@ class CreateGuruTable extends Migration
             $table->bigIncrements('guru_id');
             $table->string('nik');
             $table->string('nip');
-            $table->string('nama_guru');
-            $table->integer('pendidikan_id');
-            $table->string('telepon_guru');
-            $table->string('password');
+            $table->string('nama_lengkap');
+            $table->string('alamat');
+            $table->integer('jp_id');
+            $table->string('telepon');
             $table->timestamps();
         });
     }
