@@ -45,5 +45,12 @@ Route::get('guru/edit/{id}','DataGuru@edit');
 Route::put('guru/update/{id}','DataGuru@update');
 Route::get('guru/delete/{id}','DataGuru@destroy');
 
+//Walikelas
+Route::get('wali-kelas','DataWalikelas@index');
+Route::get('wali-kelas/add','DataWalikelas@create');
+Route::post('wali-kelas/store','DataWalikelas@store');
+Route::get('wali-kelas/edit/{id}','DataWalikelas@edit');
+Route::put('wali-kelas/update/{id}','DataWalikelas@update');
+Route::get('wali-kelas/delete/{id}','DataWalikelas@destroy');
 
 
