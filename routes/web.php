@@ -53,4 +53,10 @@ Route::get('wali-kelas/edit/{id}','DataWalikelas@edit');
 Route::put('wali-kelas/update/{id}','DataWalikelas@update');
 Route::get('wali-kelas/delete/{id}','DataWalikelas@destroy');
 
-
+//Tahun Ajaran
+Route::get('tahun-ajaran','DataTahunajaran@index');
+Route::get('tahun-ajaran/add','DataTahunajaran@create');
+Route::post('tahun-ajaran/store','DataTahunajaran@store');
+Route::get('tahun-ajaran/edit/{id}','DataTahunajaran@edit');
+Route::put('tahun-ajaran/update/{id}','DataTahunajaran@update');
+Route::get('tahun-ajaran/delete/{id}','DataTahunajaran@destroy');

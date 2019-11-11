@@ -42,7 +42,7 @@
     </ul>
   </nav>
 
-  <aside class="main-sidebar sidebar-light-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="{{url('/')}}" class="brand-link">
       <img src="{{url('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
@@ -136,6 +136,12 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('/tahun-ajaran')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tahun Ajaran</p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="{{url('/siswa')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
