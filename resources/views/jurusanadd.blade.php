@@ -20,7 +20,15 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
-            
+             @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error->singkatan }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Form {{$title}}</h3>

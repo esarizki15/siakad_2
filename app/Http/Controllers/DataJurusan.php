@@ -38,6 +38,15 @@ class DataJurusan extends Controller
      */
     public function store(Request $request)
     {
+        $messages = [
+            'required' => "Form ini tidak boleh kosong"
+        ];
+
+        $this->validate($request,[
+            'singkatan' => 'required',
+            'nama_jurusan' => 'required'
+        ], $messages);
+
         $jurusan = new Jurusan();
         $jurusan->singkatan = $request->singkatan;
         $jurusan->nama_jurusan = $request->nama_jurusan;
