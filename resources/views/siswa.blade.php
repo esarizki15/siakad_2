@@ -34,7 +34,7 @@
                      </h3>
                   </div>
                   <div class="card-body">
-                  <table id="example1" class="table table-bordered table-striped">
+                  <table id="example1" class="table table-bordered table-striped table-sm">
                      <thead>
                      <tr>
                         <th>No</th>
@@ -54,7 +54,7 @@
                         <td>{{$row->nis}}</td>
                         <td>{{$row->nisn}}</td>
                         <td>{{$row->nama_siswa}}</td>
-                        <td>{{$row->kelas_id}}</td>
+                        <td>{{@$row->kelas->nama_kelas}}</td>
                         <td>
                         @if($row->jk=='P')
                            <span class="badge badge-warning"><i class="fa fa-venus"></i></span> {{$row->jk}}

@@ -8,4 +8,12 @@ class Guru extends Model
 {
     protected $table = 'guru';
     protected $primaryKey = 'guru_id';
+
+    function jenjang_pendidikan(){
+        return $this->belongsTo('App\Jenjang_pendidikan','jp_id');
+    }
+
+    function walikelas(){
+        return $this->hasOne('App\Walikelas','guru_id');
+    }
 }

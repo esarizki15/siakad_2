@@ -26,20 +26,21 @@
                 </div>
             @endif
                <div class="card">
-                  <div class="card-header">
+                  <div class="card-header bg-primary">
                      <h3 class="card-title">
-                        <a href="{{url('/wali-kelas/add')}}" class="btn btn-primary btn-sm pull-right">Tambah</a>
-                        <a href="" class="btn btn-primary btn-sm pull-right">Export</a>
-                        <a href="" class="btn btn-primary btn-sm pull-right">Import</a>
+                        <a href="{{url('/wali-kelas/add')}}" class="btn btn-info btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
+                        <a href="" class="btn btn-info btn-sm pull-right"><i class="fa fa-download"></i> Export</a>
+                        <a href="" class="btn btn-info btn-sm pull-right"><i class="fa fa-upload"></i> Import</a>
+                        <a href="" class="btn btn-info btn-sm pull-right"><i class="fa fa-trash"></i></a>
                      </h3>
                   </div>
                   <div class="card-body">
-                  <table id="example1" class="table table-bordered table-striped">
+                  <table id="example1" class="table table-bordered table-striped table-sm">
                      <thead>
                      <tr>
                         <th>No</th>
                         <th>Nama Guru</th>
-                        <th>Kelas</th>
+                        <th>Wali Kelas</th>
                         <th></th>
                      </tr>
                      </thead>
@@ -48,8 +49,8 @@
                      @foreach($walikelas as $row)
                      <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$row->guru_id}}</td>
-                        <td>{{$row->kelas_id}}</td>
+                        <td>{{@$row->guru->nama_lengkap}}</td>
+                        <td>{{@$row->kelas->nama_kelas}}</td>
                         <td class="text-center">
                            <a href="{{url('wali-kelas/edit/'.$row->walikelas_id)}}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></a>
                            <a href="{{url('wali-kelas/delete/'.$row->walikelas_id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>

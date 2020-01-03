@@ -1,27 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Siswa;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Kelas;
-use App\Jurusan;
 
-class DataKelas extends Controller
+class Guru extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct(){
-        $this->middleware('auth');
-    }
-    
     public function index()
     {
-        $title = "Data Kelas";
-        $kelas = Kelas::get();
-        return view('kelas', compact('title','kelas'));
+        //
     }
 
     /**
@@ -31,9 +24,7 @@ class DataKelas extends Controller
      */
     public function create()
     {
-        $title = "Tambah Data Kelas";
-        $jurusan = Jurusan::all();
-        return view('kelasadd',compact('title','jurusan'));
+        //
     }
 
     /**
@@ -44,11 +35,7 @@ class DataKelas extends Controller
      */
     public function store(Request $request)
     {
-        $kelas = new Kelas();
-        $kelas->nama_kelas = $request->nama_kelas;
-        $kelas->jurusan_id = $request->id_jurusan;
-        $kelas->save();
-        return redirect('kelas')->with('alert-success','Data Kelas berhasil ditambahkan');
+        //
     }
 
     /**
@@ -70,10 +57,7 @@ class DataKelas extends Controller
      */
     public function edit($id)
     {
-        $title = "Perbaharui Data Kelas";
-        $kelas = Kelas::find($id);
-        $jurusan = Jurusan::all();
-        return view('kelasedit', compact('title','kelas','jurusan'));
+        //
     }
 
     /**
@@ -85,11 +69,7 @@ class DataKelas extends Controller
      */
     public function update(Request $request, $id)
     {
-        $kelas = Kelas::find($id);
-        $kelas->nama_kelas = $request->nama_kelas;
-        $kelas->jurusan_id = $request->id_jurusan;
-        $kelas->save();
-        return redirect('kelas')->with('alert-success', 'Data kelas berhasil diperbaharui');
+        //
     }
 
     /**
@@ -100,7 +80,6 @@ class DataKelas extends Controller
      */
     public function destroy($id)
     {
-        Kelas::find($id)->delete();
-        return redirect('kelas')->with('alert-success','Berhasil menghapus data kelas');
+        //
     }
 }

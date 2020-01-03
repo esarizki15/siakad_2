@@ -8,7 +8,8 @@ class Jurusan extends Model
 {
     protected $table = 'jurusan';
     protected $primaryKey = 'jurusan_id';
+
     function kelas(){
-        return $this->belongsTo('App\Kelas','jurusan_id');
+        return $this->hasOne('App\Kelas','jurusan_id');
     }
 }

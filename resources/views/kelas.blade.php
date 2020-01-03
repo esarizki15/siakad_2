@@ -26,14 +26,16 @@
                 </div>
             @endif
          <div class="card">
-            <div class="card-header">
+            <div class="card-header bg-primary">
                <h3 class="card-title">
-                  <a href="{{url('/kelas/add')}}" class="btn btn-primary btn-sm pull-right">Tambah Kelas</a>
-                  <a href="" class="btn btn-primary btn-sm pull-right">Export</a>
+                  <a href="{{url('/kelas/add')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
+                  <a href="" class="btn btn-primary btn-sm pull-right"><i class="fa fa-download"></i> Export</a>
+                  <a href="" class="btn btn-primary btn-sm pull-right"><i class="fa fa-upload"></i> Import</a>
+                  <a href="" class="btn btn-primary btn-sm pull-right"><i class="fa fa-trash"></i></a>
                </h3>
             </div>
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped table-hover">
+              <table id="example1" class="table table-bordered table-striped table-hover table-sm">
                 <thead>
                 <tr>
                   <th>No</th>
@@ -49,7 +51,7 @@
                   <tr>
                      <td>{{$no++}}</td>
                      <td style="text-transform: uppercase;">{{$row->nama_kelas}}</td>
-                     <td>{{$row->nama_jurusan}}</td>
+                     <td>{{@$row->jurusan->nama_jurusan}}</td>
                      <td><span class="badge badge-primary">Aktif</span></td>
                      <td>
                         <a href="{{url('kelas/edit/'.$row->kelas_id)}}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>

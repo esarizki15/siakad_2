@@ -26,16 +26,16 @@
                 </div>
             @endif
                <div class="card">
-                  <div class="card-header">
+                  <div class="card-header bg-primary">
                      <h3 class="card-title">
-                        <a href="{{url('/guru/add')}}" class="btn btn-primary btn-sm pull-right">Tambah</a>
-                        <a href="" class="btn btn-primary btn-sm pull-right">Export</a>
-                        <a href="" class="btn btn-primary btn-sm pull-right">Import</a>
-                        <a href="" class="btn btn-danger btn-sm pull-right"><i class="fa fa-trash"></i></a>
+                        <a href="{{url('/guru/add')}}" class="btn btn-info btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
+                        <a href="" class="btn btn-info btn-sm pull-right"><i class="fa fa-download"></i> Export</a>
+                        <a href="" class="btn btn-info btn-sm pull-right"><i class="fa fa-upload"></i> Import</a>
+                        <a href="" class="btn btn-info btn-sm pull-right"><i class="fa fa-trash"></i></a>
                      </h3>
                   </div>
                   <div class="card-body">
-                  <table id="example1" class="table table-bordered table-striped">
+                  <table id="example1" class="table table-bordered table-striped table-sm">
                      <thead>
                      <tr>
                         <th>No</th>
@@ -43,8 +43,8 @@
                         <th>NIP</th>
                         <th>Nama Lengkap</th>
                         <th>Jenjang Pendidikan</th>
-                        <th>Jurusan</th>
-                        <th>Jenis Kelamin</th>
+                        <th>Kontak</th>
+                        <th>Status</th>
                         <th></th>
                      </tr>
                      </thead>
@@ -56,9 +56,9 @@
                             <td>{{$row->nik}}</td>
                             <td>{{$row->nip}}</td>
                             <td>{{$row->nama_lengkap}}</td>
-                            <td>{{$row->alamat}}</td>
+                            <td>{{@$row->jenjang_pendidikan->jenjang_pendidikan_detail}}</td>
                             <td>{{$row->telepon}}</td>
-                            <td>{{$row->jp_id}}</td>
+                            <td><span class="badge badge-primary">Aktif</span></td>
                             <td width="100" class="text-center">
                                  <a href="{{url('guru/edit/'.$row->guru_id)}}" class="btn btn-success btn-xs"><i class="fa fa-list"></i></a>
                                  <a href="{{url('guru/edit/'.$row->guru_id)}}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></a>

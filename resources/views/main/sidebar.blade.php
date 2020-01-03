@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{$title}}</title>
+  <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{url('plugins/fontawesome-free/css/all.min.css')}}">
   <link rel="stylesheet" href="{{url('dist/css/adminlte.min.css')}}">
@@ -28,9 +28,7 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
-      </li>
+      
     </ul>
 
     <ul class="navbar-nav ml-auto">
@@ -149,6 +147,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{url('/siswa')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Mata Pelajaran</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{url('/kelas')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Jadwal Pelajaran</p>
@@ -159,7 +163,7 @@
           <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
             <a href="pages/gallery.html" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
+              <i class="nav-icon fa fa-gear"></i>
               <p>
                 Pengaturan
               </p>
@@ -167,7 +171,7 @@
           </li>
           <li class="nav-item">
             <a href="pages/gallery.html" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
+              <i class="nav-icon fa fa-info-circle"></i>
               <p>
                 Tentang Aplikasi
               </p>

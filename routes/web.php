@@ -1,8 +1,15 @@
 <?php
 
-//Dashboard
-Route::get('/', 'Dashboard@index');
+
+Route::get('/', 'Login@index');
+Route::post('login','Login@getauth');
 Route::get('/dashboard','Dashboard@index');
+
+//Auth
+Auth::routes();
+
+//Dashboard
+Route::get('/home', 'HomeController@index')->name('home');
 
 //Jurusan
 Route::get('/jurusan','DataJurusan@index');
