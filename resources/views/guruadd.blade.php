@@ -18,7 +18,7 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
-           
+
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Form {{$title}}</h3>
@@ -57,7 +57,18 @@
                            @endforeach
                         </select>
                      </div>
+                     <div class="form-group col-md-6">
+                        <label for="exampleInputPassword1">Status</label><br>
+                        <div class="custom-control custom-radio">
+                          <input class="custom-control-input" type="radio" name="status" value="aktif" id="customRadio2" name="customRadio">
+                          <label for="customRadio2" class="custom-control-label">Aktif</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input class="custom-control-input" type="radio" name="status" value="nonaktif" id="customRadio1" name="customRadio">
+                          <label for="customRadio1" class="custom-control-label">Tidak Aktif</label>
+                        </div>
                      </div>
+                  </div>
                   </div>
                   <div class="col-md-4">
                   <label>FOTO PROFILE</label>

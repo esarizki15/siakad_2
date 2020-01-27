@@ -29,6 +29,8 @@
                   {{csrf_field()}}
                   {{method_field('PUT')}}
                   <div class="card-body row">
+                  <div class="col-md-8">
+                     <div class="row">
                      <div class="form-group col-md-6">
                         <label for="exampleInputEmail1">NIK</label>
                         <input value="{{$guru->nik}}" required type="text" name="nik" class="form-control" id="exampleInputEmail1" placeholder="Nomor Induk Kewarganegaraan">
@@ -52,12 +54,36 @@
                      <div class="form-group col-md-6">
                         <label for="exampleInputPassword1">Pilih Jenjang Pendidikan</label>
                         <select name="jp_id" class="form-control">
-                           <option value="{{$guru->jp_id}}">Pilih Jenjang Pendidikan</option>
+                           <option value="{{$guru->jp_id}}">{{@$guru->jenjang_pendidikan->jenjang_pendidikan_detail}}</option>
                            @foreach($jenjang_pendidikan as $row)
                            <option value="{{$row->jp_id}}">{{$row->jenjang_pendidikan_detail}}</option>
                            @endforeach
                         </select>
                      </div>
+                  </div>
+                  </div>
+                  <div class="col-md-4">
+                  <label>FOTO PROFILE</label>
+                  <div class="card card-primary card-outline">
+              <div class="card-body box-profile">
+              
+                <div class="text-center">
+                  <img class="profile-user-img img-fluid img-circle"
+                       src="../../dist/img/user4-128x128.jpg"
+                       alt="User profile picture">
+                </div>
+
+                <div class="form-group" style="margin-top: 10px;">
+                    
+                    <div class="custom-file">
+                      <input type="file" name="images" class="custom-file-input" id="customFile">
+                      <label class="custom-file-label" for="customFile">Pilih Gambar</label>
+                    </div>
+                  </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+                  </div>
                   </div>
                 <div class="card-footer">
                   <button class="btn btn-warning" onclick="location(href:'blabla')">Kembali</button>

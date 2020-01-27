@@ -22,6 +22,8 @@ class CreateGuruTable extends Migration
             $table->integer('jp_id');
             $table->string('telepon');
             $table->string('foto');
+            $table->string('status');
+            $table->string('deleted');
             $table->timestamps();
         });
     }

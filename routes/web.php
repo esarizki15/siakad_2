@@ -50,6 +50,9 @@ Route::get('guru/add','DataGuru@create');
 Route::post('guru/store','DataGuru@store');
 Route::get('guru/edit/{id}','DataGuru@edit');
 Route::put('guru/update/{id}','DataGuru@update');
+Route::get('guru/trash/{id}','DataGuru@soft_destroy');
+Route::get('guru/recovery/','DataGuru@recovery');
+Route::get('guru/restore/{id}','DataGuru@un_destroy');
 Route::get('guru/delete/{id}','DataGuru@destroy');
 
 //Walikelas

@@ -102,7 +102,7 @@ class DataWalikelas extends Controller
      */
     public function destroy($id)
     {
-        Walikelas::find($id);
+        Walikelas::find($id)->delete();
         return redirect('wali-kelas')->with('alert-success','Berhasil menghapus data wali kelas');
     }
 }

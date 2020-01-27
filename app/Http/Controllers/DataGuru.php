@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Guru;
 use App\Jenjang_pendidikan;
@@ -20,7 +20,7 @@ class DataGuru extends Controller
     public function index()
     {
         $title = "Data Guru";
-        $guru = Guru::all();
+        $guru = Guru::where('deleted','N')->get();
         return view('guru', compact('title','guru'));
     }
 
@@ -45,36 +45,46 @@ class DataGuru extends Controller
     public function store(Request $request)
     {
         $data = new Guru();
-
-        if($request->hasFile('images')){
-            $file = $request->file('images');
-   
-            // Mendapatkan Nama File
-            $nama_file = $file->getClientOriginalName();
-         
-            // Mendapatkan Extension File
-            $extension = $file->getClientOriginalExtension();
-        
-            // Mendapatkan Ukuran File
-            $ukuran_file = $file->getSize();
-         
-            // Proses Upload File
-            $destinationPath = 'uploads';
-            $file->move($destinationPath,$file->getClientOriginalName());
-
-            $data->nik = $request->nik;
+        $data->nik = $request->nik;
             $data->nip = $request->nip;
             $data->nama_lengkap = $request->nama_lengkap;
             $data->alamat = $request->alamat;
             $data->telepon = $request->telepon;
             $data->jp_id = $request->jp_id;
-            $data->foto = $nama_file;
+            $data->foto = "some files";
+            $data->status = $request->status;
+            $data->deleted = 'N';
             $data->save();
             return redirect('guru')->with('alert-success','Berhasil menambah data guru');
-        }else{
-            echo "Gagal upload gambar";
-        }
-        
+            // if($request->hasFile('images')){
+            //     $file = $request->file('images');
+    
+            //     // Mendapatkan Nama File
+            //     $nama_file = $file->getClientOriginalName();
+            
+            //     // Mendapatkan Extension File
+            //     $extension = $file->getClientOriginalExtension();
+            
+            //     // Mendapatkan Ukuran File
+            //     $ukuran_file = $file->getSize();
+            
+            //     // Proses Upload File
+            //     $destinationPath = 'uploads';
+            //     $file->move($destinationPath,$file->getClientOriginalName());
+
+            //     $data->nik = $request->nik;
+            //     $data->nip = $request->nip;
+            //     $data->nama_lengkap = $request->nama_lengkap;
+            //     $data->alamat = $request->alamat;
+            //     $data->telepon = $request->telepon;
+            //     $data->jp_id = $request->jp_id;
+            //     $data->foto = $nama_file;
+            //     $data->save();
+                
+            //     // 
+            // }else{
+            //     echo "Gagal upload gambar";
+            // }
     }
 
     /**
@@ -118,6 +128,7 @@ class DataGuru extends Controller
         $data->alamat = $request->alamat;
         $data->telepon = $request->telepon;
         $data->jp_id = $request->jp_id;
+        $data->status = $request->status;
         $data->save();
         return redirect('guru')->with('alert-success','Berhasil memperbaharui data guru');
     }
@@ -128,15 +139,37 @@ class DataGuru extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function soft_destroy($id)
+    {
+        $data = Guru::find($id);
+        $data->deleted = "Y";
+        $data->save();
+        return redirect('guru')->with('alert-success','Data Guru berhasil di hapus');
+    }
+
+    public function restore()
+    {
+        $data = Guru::find($id);
+        $data->deleted = "N";
+        $data->save();
+        return redirect('guru')->with('alert-success','Data Guru berhasil di kembalikan');
+    }
+
+    public function recovery()
+    {
+        $title = "Data Guru Terhapus";
+        $guru = Guru::where('deleted','Y')->get();
+        return view('guru', compact('title','guru'));
+    }
+
     public function destroy($id)
     {
         // Hapus file
         $gambar = Guru::where('guru_id',$id)->first();
-        $data = File::delete('public/uploads/'.$gambar->foto);
-        dd($data);
+        Storage::disk('public')->delete('uploads/'.$gambar->foto);
 
-        // //Hapus Data
-        // Guru::find($id)->delete();
-        // return redirect('guru')->with('alert-success','Berhasil menghapus data guru');
+        Guru::find($id)->delete();
+        return redirect('guru')->with('alert-success','Berhasil menghapus data guru');
     }
 }
