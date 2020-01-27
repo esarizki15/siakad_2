@@ -28,10 +28,10 @@
                <div class="card">
                   <div class="card-header bg-primary">
                      <h3 class="card-title">
-                        <a href="{{url('/guru/add')}}" class="btn btn-info btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
-                        <a href="" class="btn btn-info btn-sm pull-right"><i class="fa fa-download"></i> Export</a>
-                        <a href="" class="btn btn-info btn-sm pull-right"><i class="fa fa-upload"></i> Import</a>
-                        <a href="" class="btn btn-info btn-sm pull-right"><i class="fa fa-trash"></i></a>
+                        <a href="{{url('/guru/add')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Input Data</a>
+                        <a href="" class="btn btn-primary btn-sm pull-right"><i class="fa fa-download"></i> Export Data</a>
+                        <a href="" class="btn btn-primary btn-sm pull-right"><i class="fa fa-upload"></i> Import Data</a>
+                        <a href="" class="btn btn-primary btn-sm pull-right"><i class="fa fa-trash"></i></a>
                      </h3>
                   </div>
                   <div class="card-body">
@@ -39,11 +39,9 @@
                      <thead>
                      <tr>
                         <th>No</th>
-                        <th>NIK</th>
-                        <th>NIP</th>
+                        <th>NUPTK</th>
                         <th>Nama Lengkap</th>
                         <th>Jenjang Pendidikan</th>
-                        <th>Kontak</th>
                         <th>Status</th>
                         <th></th>
                      </tr>
@@ -53,17 +51,18 @@
                      @foreach($guru as $row)
                         <tr>
                             <td>{{$no++}}</td>
-                            <td>{{$row->nik}}</td>
-                            <td>{{$row->nip}}</td>
+                            <td>
+                              <img class="img-responsive" style="width: 50px; height: 50px;" src="{{url('/uploads')}}/{{$row->foto}}">
+                              {{$row->nip}}
+                           </td>
                             <td>{{$row->nama_lengkap}}</td>
                             <td>{{@$row->jenjang_pendidikan->jenjang_pendidikan_detail}}</td>
-                            <td>{{$row->telepon}}</td>
                             <td><span class="badge badge-primary">Aktif</span></td>
-                            <td width="100" class="text-center">
-                                 <a href="{{url('guru/edit/'.$row->guru_id)}}" class="btn btn-success btn-xs"><i class="fa fa-list"></i></a>
-                                 <a href="{{url('guru/edit/'.$row->guru_id)}}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></a>
-                                 <a href="{{url('guru/delete/'.$row->guru_id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
-                            </td>
+                            <td class="text-center">
+                                 <a href="{{url('guru/edit/'.$row->guru_id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
+                                 <a href="{{url('guru/edit/'.$row->guru_id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                 <a href="{{url('guru/delete/'.$row->guru_id)}}" class="btn btn-danger btn-sm hapus"><i class="fa fa-trash"></i></a>
+                            </td> 
                         </tr>
                      @endforeach
                      </tfoot>

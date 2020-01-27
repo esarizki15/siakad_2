@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
+  <title>{{@$title}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{url('plugins/fontawesome-free/css/all.min.css')}}">
   <link rel="stylesheet" href="{{url('dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{url('sweetalert/sweetalert2.min.css')}}">
   <link rel="stylesheet" href="{{url('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <style>
@@ -18,6 +19,9 @@
     }
     .kelas{
       text-transform: uppercase;
+    }
+    .btn{
+      border-radius: 0px;
     }
   </style>
 </head>
@@ -204,22 +208,12 @@
 <script src="{{url('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- ChartJS -->
 <script src="{{url('plugins/chart.js/Chart.min.js')}}"></script>
-<!-- Sparkline -->
-<script src="{{url('plugins/sparklines/sparkline.js')}}"></script>
-<!-- JQVMap -->
-<script src="{{url('plugins/jqvmap/jquery.vmap.min.js')}}"></script>
-<script src="{{url('plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
-<!-- jQuery Knob Chart -->
-<script src="{{url('plugins/jquery-knob/jquery.knob.min.js')}}"></script>
 <!-- daterangepicker -->
 <script src="{{url('plugins/moment/moment.min.js')}}"></script>
+<!-- Moment -->
 <script src="{{url('plugins/daterangepicker/daterangepicker.js')}}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{url('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
-<!-- Summernote -->
-<script src="{{url('plugins/summernote/summernote-bs4.min.js')}}"></script>
-<!-- overlayScrollbars -->
-<script src="{{url('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{url('dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
@@ -228,6 +222,7 @@
 <script src="{{url('dist/js/demo.js')}}"></script>
 <script src="{{url('plugins/datatables/jquery.dataTables.js')}}"></script>
 <script src="{{url('plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
+<script src="{{url('sweetalert/sweetalert2.min.js')}}"></script>
 <script>
   $(function () {
     $("#example1").DataTable();
@@ -238,6 +233,27 @@
       "ordering": true,
       "info": true,
       "autoWidth": true,
+    });
+  });
+
+  $(document).ready(function(){
+    $('.hapus').on('click', function(){
+      event.preventDefault();
+      var link = $(this).attr('href');
+      Swal.fire({
+        title: 'Konfirmasi Hapus',
+        text: "Apakah anda akan menghapus data ini?",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ya, Hapus'
+      }).then((result) => {
+        if (result.value) {
+          document.location.href = link;
+          
+        }
+      })
     });
   });
 </script>

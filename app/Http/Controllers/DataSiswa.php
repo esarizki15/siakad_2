@@ -41,6 +41,9 @@ class DataSiswa extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    
+
     public function store(Request $request)
     {
         $data = new Siswa();
