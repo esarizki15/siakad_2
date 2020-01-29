@@ -1,3 +1,10 @@
+Ini adalah halaman administrator untuk user admin, setelah pengerjaan halaman ini saya akan mengerjakan untuk bagian frontend untuk halaman guru dan siswa menggunakan vue js yang mengkonsumsi data dari Rest API dari project ini.
+
+-Laravel
+-Admin LTe
+-Bootstrap
+-JQuery
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
