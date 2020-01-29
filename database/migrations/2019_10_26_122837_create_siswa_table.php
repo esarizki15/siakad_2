@@ -22,6 +22,7 @@ class CreateSiswaTable extends Migration
             $table->string('alamat');
             $table->string('password');
             $table->string('jk');
+            $table->boolean('aktif')->default(true);
             $table->timestamps();
         });
     }

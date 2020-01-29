@@ -26,6 +26,7 @@ class CreateGuruTable extends Migration
             $table->string('username');
             $table->string('password');
             $table->string('deleted');
+            $table->boolean('aktif')->default(true);
             $table->timestamps();
         });
     }
