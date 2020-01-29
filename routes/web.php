@@ -70,3 +70,8 @@ Route::post('tahun-ajaran/store','DataTahunajaran@store');
 Route::get('tahun-ajaran/edit/{id}','DataTahunajaran@edit');
 Route::put('tahun-ajaran/update/{id}','DataTahunajaran@update');
 Route::get('tahun-ajaran/delete/{id}','DataTahunajaran@destroy');
+
+//Kalender Akademik
+Route::get('kalender-akademik','KalenderAkademik@index');
+Route::get('kalender-akademik/add','KalenderAkademik@create');
+Route::get('kalender-akademik/save','KalenderAkademik@store');

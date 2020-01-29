@@ -21,7 +21,7 @@
 
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Form {{$title}}</h3>
+                <h3 class="card-title"><i class="fa fa-plus-circle"></i> {{$title}}</h3>
               </div>
               <form role="form" action="{{url('guru/store')}}" method="post" enctype="multipart/form-data">
                   {{csrf_field()}}
@@ -94,8 +94,8 @@
                   </div>
                   </div>
                 <div class="card-footer">
-                  <button class="btn btn-warning" onclick="location(href:'blabla')">Kembali</button>
-                  <button type="submit" class="btn btn-primary">Simpan</button>
+                  <a class="btn btn-danger bg-gradient-danger btn-sm" href="{{url('guru/')}}"><i class="fa fa-chevron-circle-left"></i> Kembali</a>
+                  <button type="submit" class="btn btn-primary bg-gradient-primary btn-sm"><i class="fa fa-check"></i> Simpan</button>
                 </div>
               </form>
             </div>

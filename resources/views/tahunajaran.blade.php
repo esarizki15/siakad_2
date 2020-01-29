@@ -4,13 +4,10 @@
    <div class="content-header">
       <div class="container-fluid">
          <div class="row mb-2">
-            <div class="col-sm-6">
-               <h1 class="m-0 text-dark"><i class="fa fa-"></i> {{$title}}</h1>
-            </div>
-            <div class="col-sm-6">
-               <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Akademik</a></li>
-                  <li class="breadcrumb-item active">{{$title}}</li>
+            <div class="col-sm-12" style="border-radius: 5px;">
+               <ol class="breadcrumb float-sm-left">
+                  <li class="breadcrumb-item"><a href="#"><i class="fa fa-chevron-circle-right"></i> Akademik</a></li>
+                  <li class="breadcrumb-item active">{{$title}} </li>
                </ol>
             </div>
          </div>
@@ -26,21 +23,21 @@
                 </div>
             @endif
                <div class="card">
-                  <div class="card-header">
+                  <div class="card-header bg-primary">
                      <h3 class="card-title">
-                        <a href="{{url('/tahun-ajaran/add')}}" class="btn btn-primary btn-sm pull-right">Tambah</a>
-                        <a href="" class="btn btn-primary btn-sm pull-right">Export</a>
-                        <a href="" class="btn btn-primary btn-sm pull-right">Import</a>
+                        <a href="{{url('/tahun-ajaran/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
+                        <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-download"></i> Export</a>
+                        <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-upload"></i> Import</a>
+                        <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-trash"></i> Recovery</a>
                      </h3>
                   </div>
                   <div class="card-body">
-                  <table id="example1" class="table table-bordered table-striped table-sm">
+                  <table id="example1" class="table table-striped table-sm">
                      <thead>
                      <tr>
                         <th>No</th>
                         <th>Tahun Ajaran</th>
-                        <th>Jumlah Kelas</th>
-                        <th>Jumlah Siswa</th>
+                        <th>Status</th>
                         <th></th>
                      </tr>
                      </thead>
@@ -48,14 +45,19 @@
                      <?php $no = 1; ?>
                      @foreach($tahun_ajaran as $row)
                         <tr>
-                            <td>{{$no++}}</td>
-                            <td>{{$row->tahun_ajaran}}</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <a href="{{url('tahun-ajaran/edit/'.$row->tahun_ajaran_id)}}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></a>
-                                <a href="{{url('tahun-ajaran/delete/'.$row->tahun_ajaran_id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
-                            </td>
+                           <td>{{$no++}}</td>
+                           <td>{{$row->tahun_ajaran}}</td>
+                           <td>
+                              @if($row->active==true)
+                              <span class="badge badge-primary">{{"Aktif"}}</span>
+                              @else
+                              <span class="badge badge-danger">{{"Tidak Aktif"}}</span>
+                              @endif
+                           </td>
+                           <td class="text-center"> 
+                              <a href="{{url('tahun-ajaran/edit/'.$row->tahun_ajaran_id)}}" class="btn btn-primary bg-gradient-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
+                              <a href="{{url('tahun-ajaran/delete/'.$row->tahun_ajaran_id)}}" class="btn btn-danger bg-gradient-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                           </td>
                         </tr>
                     @endforeach
                      </tfoot>

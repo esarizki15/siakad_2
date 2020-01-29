@@ -28,8 +28,8 @@
          <div class="card">
             <div class="card-header">
                <h3 class="card-title">
-                  <a href="{{url('/jurusan/add')}}" class="btn btn-primary btn-sm pull-right">Tambah Jurusan</a>
-                  <a href="" class="btn btn-primary btn-sm pull-right">Export</a>
+                  <a href="{{url('/jurusan/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right">Tambah Jurusan</a>
+                  <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right">Export</a>
                </h3>
             </div>
             <div class="card-body">

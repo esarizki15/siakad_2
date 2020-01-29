@@ -20,6 +20,7 @@ class DataSiswa extends Controller
     {
         $title = "Data Siswa";
         $siswa = Siswa::all();
+        $jumlah = Siswa::all()->count();
         return view('siswa', compact('title', 'siswa'));
     }
 

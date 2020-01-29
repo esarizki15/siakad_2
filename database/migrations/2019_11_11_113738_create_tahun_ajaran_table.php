@@ -16,6 +16,7 @@ class CreateTahunAjaranTable extends Migration
         Schema::create('tahun_ajaran', function (Blueprint $table) {
             $table->bigIncrements('tahun_ajaran_id');
             $table->string('tahun_ajaran');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

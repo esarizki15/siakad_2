@@ -4,13 +4,10 @@
    <div class="content-header">
       <div class="container-fluid">
          <div class="row mb-2">
-            <div class="col-sm-6">
-               <h1 class="m-0 text-dark">{{$title}}</h1>
-            </div>
-            <div class="col-sm-6">
-               <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active">Dashboard v1</li>
+            <div class="col-sm-12" style="border-radius: 5px;">
+               <ol class="breadcrumb float-sm-left">
+                  <li class="breadcrumb-item"><a href="#"><i class="fa fa-chevron-circle-right"></i> Jurusan</a></li>
+                  <li class="breadcrumb-item active">{{$title}} </li>
                </ol>
             </div>
          </div>
@@ -31,14 +28,14 @@
                             @endif
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Form {{$title}}</h3>
+                <h3 class="card-title"><i class="fa fa-plus-circle"></i> {{$title}}</h3>
               </div>
               <form role="form" action="{{url('jurusan/store/')}}" method="post">
                   {{csrf_field()}}
                   
                   <div class="card-body row">
                      <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1">Singkatan</label>
+                        <label for="exampleInputEmail1">Kode Jurusan</label>
                         <input required type="text" name="singkatan" class="form-control" id="exampleInputEmail1" placeholder="Contoh : TKJ">
                      </div>
                      <div class="form-group col-md-6">
@@ -47,8 +44,8 @@
                      </div>
                   </div>
                 <div class="card-footer">
-                  <button class="btn btn-warning" onclick="location(href:'blabla')">Kembali</button>
-                  <button type="submit" class="btn btn-primary">Simpan</button>
+                  <a class="btn btn-danger bg-gradient-danger btn-sm" href="{{url('jurusan/')}}"><i class="fa fa-chevron-circle-left"></i> Kembali</a>
+                  <button type="submit" class="btn btn-primary bg-gradient-primary btn-sm"><i class="fa fa-check"></i> Simpan</button>
                 </div>
               </form>
             </div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserTable extends Migration
+class CreateTableKalenderAkademik extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('user', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('kalender_akademik', function (Blueprint $table) {
+            $table->bigIncrements('kalender_akademik_id');
+            $table->string('title');
+            $table->text('content');
+            $table->date('tgl');
+            $table->string('created_by');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user');
+        Schema::dropIfExists('table_kalender_akademik');
     }
 }

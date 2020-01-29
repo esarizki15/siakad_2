@@ -4,13 +4,10 @@
    <div class="content-header">
       <div class="container-fluid">
          <div class="row mb-2">
-            <div class="col-sm-6">
-               <h1 class="m-0 text-dark">{{$title}}</h1>
-            </div>
-            <div class="col-sm-6">
-               <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Tenaga Pendidik</a></li>
-                  <li class="breadcrumb-item active">{{$title}}</li>
+            <div class="col-sm-12" style="border-radius: 5px;">
+               <ol class="breadcrumb float-sm-left">
+                  <li class="breadcrumb-item"><a href="#"><i class="fa fa-chevron-circle-right"></i> Tenaga Pendidik</a></li>
+                  <li class="breadcrumb-item active">{{$title}} </li>
                </ol>
             </div>
          </div>
@@ -39,8 +36,8 @@
                      </div>
                   </div>
                 <div class="card-footer">
-                  <button class="btn btn-warning" onclick="location(href:'blabla')">Kembali</button>
-                  <button type="submit" class="btn btn-primary">Simpan</button>
+                  <a class="btn btn-danger bg-gradient-danger btn-sm" href="{{url('jenjang-pendidikan/')}}"><i class="fa fa-chevron-circle-left"></i> Kembali</a>
+                  <button type="submit" class="btn btn-primary bg-gradient-primary btn-sm"><i class="fa fa-check"></i> Simpan</button>
                 </div>
               </form>
             </div>

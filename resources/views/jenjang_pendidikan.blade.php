@@ -4,13 +4,10 @@
    <div class="content-header">
       <div class="container-fluid">
          <div class="row mb-2">
-            <div class="col-sm-6">
-               <h1 class="m-0 text-dark">{{$title}}</h1>
-            </div>
-            <div class="col-sm-6">
-               <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Tenaga Pendidik</a></li>
-                  <li class="breadcrumb-item active">{{$title}}</li>
+            <div class="col-sm-12" style="border-radius: 5px;">
+               <ol class="breadcrumb float-sm-left">
+                  <li class="breadcrumb-item"><a href="#"><i class="fa fa-chevron-circle-right"></i> Tenaga Pendidik</a></li>
+                  <li class="breadcrumb-item active">{{$title}} </li>
                </ol>
             </div>
          </div>
@@ -26,15 +23,13 @@
                 </div>
             @endif
          <div class="card">
-            <div class="card-header">
+            <div class="card-header bg-primary">
                <h3 class="card-title">
-                  <a href="{{url('/jenjang-pendidikan/add')}}" class="btn btn-primary btn-sm pull-right">Tambah</a>
-                  <a href="" class="btn btn-primary btn-sm pull-right">Export</a>
-                  <a href="" class="btn btn-primary btn-sm pull-right">Import</a>
+                  <a href="{{url('/jenjang-pendidikan/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
                </h3>
             </div>
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped table-hover">
+              <table id="example1" class="table table-bordered table-striped table-hover table-sm">
                 <thead>
                 <tr>
                   <th>No</th>
@@ -50,9 +45,10 @@
                     <td>{{$no++}}</td>
                     <td>{{$row->jenjang_pendidikan}}</td>
                     <td>{{$row->jenjang_pendidikan_detail}}</td>
-                    <td class="text-center">
-                        <a class="btn btn-primary btn-xs" href="{{url('jenjang-pendidikan/edit/'.$row->jp_id)}}"><i class="fa fa-edit"></i></a>
-                        <a class="btn btn-danger btn-xs" href="{{url('jenjang-pendidikan/delete/'.$row->jp_id)}}"><i class="fa fa-trash"></i></a>
+                    <td class="text-center" width="300">
+                        <a class="btn btn-success btn-sm" href="{{url('jenjang-pendidikan/edit/'.$row->jp_id)}}"><i class="fa fa-eye"></i> Detail</a>
+                        <a class="btn btn-primary bg-gradient-primary btn-sm" href="{{url('jenjang-pendidikan/edit/'.$row->jp_id)}}"><i class="fa fa-edit"></i> Edit</a>
+                        <a class="btn btn-danger btn-sm hapus" href="{{url('jenjang-pendidikan/delete/'.$row->jp_id)}}"><i class="fa fa-trash"></i> Hapus</a>
                     </td>
                 </tr>
                 @endforeach

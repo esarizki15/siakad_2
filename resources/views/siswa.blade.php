@@ -4,13 +4,10 @@
    <div class="content-header">
       <div class="container-fluid">
          <div class="row mb-2">
-            <div class="col-sm-6">
-               <h1 class="m-0 text-dark"><i class="fa fa-users"></i> {{$title}}</h1>
-            </div>
-            <div class="col-sm-6">
-               <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Siswa</a></li>
-                  <li class="breadcrumb-item active">{{$title}}</li>
+            <div class="col-sm-12" style="border-radius: 5px;">
+               <ol class="breadcrumb float-sm-left">
+                  <li class="breadcrumb-item"><a href="#"><i class="fa fa-chevron-circle-right"></i> Siswa</a></li>
+                  <li class="breadcrumb-item active">{{$title}} </li>
                </ol>
             </div>
          </div>
@@ -26,11 +23,11 @@
                 </div>
             @endif
                <div class="card">
-                  <div class="card-header">
+                  <div class="card-header bg-primary">
                      <h3 class="card-title">
-                        <a href="{{url('/siswa/add')}}" class="btn btn-primary btn-sm pull-right">Tambah Siswa</a>
-                        <a href="" class="btn btn-primary btn-sm pull-right">Export</a>
-                        <a href="" class="btn btn-primary btn-sm pull-right">Import</a>
+                        <a href="{{url('/siswa/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah Siswa</a>
+                        <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-download"></i> Export</a>
+                        <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-upload"></i> Import</a>
                      </h3>
                   </div>
                   <div class="card-body">
@@ -63,8 +60,8 @@
                         @endif
                         </td>
                         <td width="160" class="text-center">
-                           <a href="{{url('siswa/update/'.$row->siswa_id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-                           <a href="{{url('siswa/delete/'.$row->siswa_id)}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                           <a href="{{url('siswa/update/'.$row->siswa_id)}}" class="btn btn-primary bg-gradient-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
+                           <a href="{{url('siswa/delete/'.$row->siswa_id)}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
                         </td>
                      </tr>
                      @endforeach

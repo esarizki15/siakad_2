@@ -54,6 +54,8 @@ class DataGuru extends Controller
             $data->foto = "some files";
             $data->status = $request->status;
             $data->deleted = 'N';
+            $data->username = $request->nik;
+            $data->password = bcrypt($request->nik);
             $data->save();
             return redirect('guru')->with('alert-success','Berhasil menambah data guru');
             // if($request->hasFile('images')){
@@ -128,7 +130,10 @@ class DataGuru extends Controller
         $data->alamat = $request->alamat;
         $data->telepon = $request->telepon;
         $data->jp_id = $request->jp_id;
+        $data->foto = "some files";
         $data->status = $request->status;
+        $data->username = $request->nik;
+        $data->password = bcrypt($request->nik);
         $data->save();
         return redirect('guru')->with('alert-success','Berhasil memperbaharui data guru');
     }

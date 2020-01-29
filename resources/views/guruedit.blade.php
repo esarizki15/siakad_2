@@ -4,13 +4,11 @@
    <div class="content-header">
       <div class="container-fluid">
          <div class="row mb-2">
-            <div class="col-sm-6">
-               <h1 class="m-0 text-dark">{{$title}}</h1>
-            </div>
-            <div class="col-sm-6">
-               <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active">{{$title}}</li>
+            
+            <div class="col-sm-12" style="border-radius: 5px;">
+               <ol class="breadcrumb float-sm-left">
+                  <li class="breadcrumb-item"><a href="#"><i class="fa fa-chevron-circle-right"></i> Data Guru</a></li>
+                  <li class="breadcrumb-item active">{{$title}} </li>
                </ol>
             </div>
          </div>
@@ -23,7 +21,7 @@
            
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Form {{$title}}</h3>
+                <h3 class="card-title"><i class="fa fa-edit"></i> {{$title}}</h3>
               </div>
               <form role="form" action="{{url('guru/update/'.$guru->guru_id)}}" method="post">
                   {{csrf_field()}}
@@ -60,6 +58,17 @@
                            @endforeach
                         </select>
                      </div>
+                     <div class="form-group col-md-6">
+                        <label for="exampleInputPassword1">Status</label><br>
+                        <div class="custom-control custom-radio">
+                          <input @if($guru->status=="aktif") {{"checked"}} @endif class="custom-control-input" type="radio" name="status" value="aktif" id="customRadio2" name="customRadio">
+                          <label for="customRadio2" class="custom-control-label">Aktif</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input @if($guru->status=="nonaktif") {{"checked"}} @endif class="custom-control-input" type="radio" name="status" value="nonaktif" id="customRadio1" name="customRadio">
+                          <label for="customRadio1" class="custom-control-label">Tidak Aktif</label>
+                        </div>
+                     </div>
                   </div>
                   </div>
                   <div class="col-md-4">
@@ -86,8 +95,8 @@
                   </div>
                   </div>
                 <div class="card-footer">
-                  <button class="btn btn-warning" onclick="location(href:'blabla')">Kembali</button>
-                  <button type="submit" class="btn btn-primary">Simpan</button>
+                  <a class="btn btn-danger bg-gradient-danger btn-sm" href="{{url('guru/')}}"><i class="fa fa-chevron-circle-left"></i> Kembali</a>
+                  <button type="submit" class="btn btn-primary bg-gradient-primary btn-sm"><i class="fa fa-check"></i> Simpan</button>
                 </div>
               </form>
             </div>

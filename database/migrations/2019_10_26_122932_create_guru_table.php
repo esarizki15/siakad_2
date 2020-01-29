@@ -23,6 +23,8 @@ class CreateGuruTable extends Migration
             $table->string('telepon');
             $table->string('foto');
             $table->string('status');
+            $table->string('username');
+            $table->string('password');
             $table->string('deleted');
             $table->timestamps();
         });

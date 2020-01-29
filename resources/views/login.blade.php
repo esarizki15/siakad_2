@@ -54,13 +54,13 @@
             </div>
           </div>
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Masuk</button>
+            <button type="submit" class="btn btn-primary bg-gradient-primary btn-block btn-flat">Masuk</button>
           </div>
         </div>
       </form>
 
       <div class="social-auth-links text-center mb-3">
-        <a href="#" class="btn btn-block btn-primary">
+        <a href="#" class="btn btn-block btn-primary bg-gradient-primary">
           <i class="fab fa-facebook mr-2"></i> Masuk dengan Akun Facebook
         </a>
         <a href="#" class="btn btn-block btn-danger">

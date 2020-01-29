@@ -4,13 +4,10 @@
    <div class="content-header">
       <div class="container-fluid">
          <div class="row mb-2">
-            <div class="col-sm-6">
-               <h1 class="m-0 text-dark"><i class="fa fa-users"></i> {{$title}}</h1>
-            </div>
-            <div class="col-sm-6">
-               <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Tenaga Pendidik</a></li>
-                  <li class="breadcrumb-item active">{{$title}}</li>
+            <div class="col-sm-12" style="border-radius: 5px;">
+               <ol class="breadcrumb float-sm-left">
+                  <li class="breadcrumb-item"><a href="#"><i class="fa fa-chevron-circle-right"></i> Tenaga Pendidik</a></li>
+                  <li class="breadcrumb-item active">{{$title}} </li>
                </ol>
             </div>
          </div>
@@ -28,10 +25,7 @@
                <div class="card">
                   <div class="card-header bg-primary">
                      <h3 class="card-title">
-                        <a href="{{url('/wali-kelas/add')}}" class="btn btn-info btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
-                        <a href="" class="btn btn-info btn-sm pull-right"><i class="fa fa-download"></i> Export</a>
-                        <a href="" class="btn btn-info btn-sm pull-right"><i class="fa fa-upload"></i> Import</a>
-                        <a href="" class="btn btn-info btn-sm pull-right"><i class="fa fa-trash"></i></a>
+                        <a href="{{url('/wali-kelas/add')}}" class="btn btn-primary bg-gradient-primary bg-gradient-dange btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
                      </h3>
                   </div>
                   <div class="card-body">
@@ -52,8 +46,8 @@
                         <td>{{@$row->guru->nama_lengkap}}</td>
                         <td>{{@$row->kelas->nama_kelas}}</td>
                         <td class="text-center">
-                           <a href="{{url('wali-kelas/edit/'.$row->walikelas_id)}}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></a>
-                           <a href="{{url('wali-kelas/delete/'.$row->walikelas_id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
+                           <a href="{{url('wali-kelas/edit/'.$row->walikelas_id)}}" class="btn btn-primary bg-gradient-primary bg-gradient-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
+                           <a href="{{url('wali-kelas/delete/'.$row->walikelas_id)}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
                         </td>
                      </tr>
                      @endforeach

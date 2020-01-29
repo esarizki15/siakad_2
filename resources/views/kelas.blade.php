@@ -4,13 +4,10 @@
    <div class="content-header">
       <div class="container-fluid">
          <div class="row mb-2">
-            <div class="col-sm-6">
-               <h1 class="m-0 text-dark">{{$title}}</h1>
-            </div>
-            <div class="col-sm-6">
-               <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Siswa</a></li>
-                  <li class="breadcrumb-item active">{{$title}}</li>
+            <div class="col-sm-12" style="border-radius: 5px;">
+               <ol class="breadcrumb float-sm-left">
+                  <li class="breadcrumb-item"><a href="#"><i class="fa fa-chevron-circle-right"></i> Siswa</a></li>
+                  <li class="breadcrumb-item active"> {{$title}} </li>
                </ol>
             </div>
          </div>
@@ -28,10 +25,8 @@
          <div class="card">
             <div class="card-header bg-primary">
                <h3 class="card-title">
-                  <a href="{{url('/kelas/add')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
-                  <a href="" class="btn btn-primary btn-sm pull-right"><i class="fa fa-download"></i> Export</a>
-                  <a href="" class="btn btn-primary btn-sm pull-right"><i class="fa fa-upload"></i> Import</a>
-                  <a href="" class="btn btn-primary btn-sm pull-right"><i class="fa fa-trash"></i></a>
+                  <a href="{{url('/kelas/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
+                  <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-trash"></i> Recovery</a>
                </h3>
             </div>
             <div class="card-body">
@@ -53,9 +48,9 @@
                      <td style="text-transform: uppercase;">{{$row->nama_kelas}}</td>
                      <td>{{@$row->jurusan->nama_jurusan}}</td>
                      <td><span class="badge badge-primary">Aktif</span></td>
-                     <td>
-                        <a href="{{url('kelas/edit/'.$row->kelas_id)}}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
-                        <a href="{{url('kelas/delete/'.$row->kelas_id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
+                     <td class="text-center" width="250">
+                        <a href="{{url('kelas/edit/'.$row->kelas_id)}}" class="btn btn-success btn-sm"><i class="fa fa-edit"></i> Edit</a>
+                        <a href="{{url('kelas/delete/'.$row->kelas_id)}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Recovery</a>
                      </td>
                   </tr>
                   @endforeach

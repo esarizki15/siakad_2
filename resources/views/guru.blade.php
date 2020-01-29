@@ -25,10 +25,10 @@
                <div class="card">
                   <div class="card-header bg-primary">
                      <h3 class="card-title">
-                        <a href="{{url('/guru/add')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Input Data</a>
-                        <a href="" class="btn btn-primary btn-sm pull-right"><i class="fa fa-download"></i> Export Data</a>
-                        <a href="" class="btn btn-primary btn-sm pull-right"><i class="fa fa-upload"></i> Import Data</a>
-                        <a href="{{url('/guru/recovery/')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-trash"></i></a>
+                        <a href="{{url('/guru/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Input Data</a>
+                        <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-download"></i> Export Data</a>
+                        <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-upload"></i> Import Data</a>
+                        <a href="{{url('/guru/recovery/')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-trash"></i></a>
                      </h3>
                   </div>
                   <div class="card-body">
@@ -55,15 +55,15 @@
                             <td>{{@$row->jenjang_pendidikan->jenjang_pendidikan_detail}}</td>
                             <td class="text-center">
                               @if($row->status=="aktif")
-                              <span class="badge badge-primary">{{$row->status}}</span>
+                              <span class="badge badge-primary" style="text-transform:uppercase;">{{$row->status}}</span>
                               @else
-                              <span class="badge badge-warning">{{$row->status}}</span>
+                              <span class="badge badge-danger" style="text-transform:uppercase;">{{$row->status}}</span>
                               @endif
                            </td>
                             <td class="text-center">
-                                 <a href="{{url('guru/edit/'.$row->guru_id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
-                                 <a href="{{url('guru/edit/'.$row->guru_id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-                                 <a href="{{url('guru/trash/'.$row->guru_id)}}" class="btn btn-danger btn-sm hapus"><i class="fa fa-trash"></i></a>
+                                 <a href="{{url('guru/edit/'.$row->guru_id)}}" class="btn btn-success btn-sm bg-gradient-success"><i class="fa fa-eye"></i> Detail</a>
+                                 <a href="{{url('guru/edit/'.$row->guru_id)}}" class="btn btn-primary bg-gradient-primary btn-sm"><i class="fa fa-edit"></i> Edit </a>
+                                 <a href="{{url('guru/trash/'.$row->guru_id)}}" class="btn btn-danger btn-sm bg-gradient-danger hapus"><i class="fa fa-trash"></i> Hapus</a>
                             </td> 
                         </tr>
                      @endforeach
