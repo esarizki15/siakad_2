@@ -75,3 +75,6 @@ Route::get('tahun-ajaran/delete/{id}','DataTahunajaran@destroy');
 Route::get('kalender-akademik','KalenderAkademik@index');
 Route::get('kalender-akademik/add','KalenderAkademik@create');
 Route::get('kalender-akademik/save','KalenderAkademik@store');
+Route::get('kalender-akademik/edit/{id}','KalenderAkademik@edit');
+Route::get('kalender-akademik/update/{id}', 'KalenderAkademik@update');
+Route::get('kalender-akademik/delete{id}', 'KalenderAkademik@destroy');

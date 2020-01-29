@@ -40,12 +40,12 @@
                         @foreach($kalender as $row)
                         <tr>
                             <td>{{$no++}}</td>
-                            <td>{{$row->tgl}}</td>
+                            <td><i class="fa fa-calendar"></i> {{$row->tgl}}</td>
                             <td>{{$row->title}}</td>
                             <td><i class="fa fa-user"></i> {{$row->created_by}}</td>
                             <td class="text-center">
-                                <a href="" class="btn btn-primary bg-gradient-primary btn-sm"> Edit</a>
-                                <a href="" class="btn btn-danger btn-sm"> Hapus</a>
+                                <a href="{{url('/kalender-akademik/edit/'.$row->kalender_akademik_id)}}" class="btn btn-primary bg-gradient-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
+                                <a href="{{url('/kalender-akademik/delete/'.$row->kalender_akademik_id)}}" class="btn btn-danger bg-gradient-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
                             </td>
                         </tr>
                         @endforeach

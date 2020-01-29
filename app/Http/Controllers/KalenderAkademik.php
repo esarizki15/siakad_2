@@ -66,7 +66,9 @@ class KalenderAkademik extends Controller
      */
     public function edit($id)
     {
-        //
+        $title = "Perbaharui Kalender Akademik";
+        $kalender = Kalender_akademik::find($id)->first();
+        return view('kaedit', compact('title','kalender'));
     }
 
     /**
@@ -77,8 +79,15 @@ class KalenderAkademik extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+
+        $data = Kalender_akademik::find($id);
+        $data->title = $request->judul;
+        $data->content = $request->isi;
+        $data->tgl = $request->tanggal;
+        $data->created_by = "Mimin Siakad";
+        $data->save();
+        return redirect('kalender-akademik')->with('alert-success','Berhasil menyimpan kalender akademik');
     }
 
     /**
