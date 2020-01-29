@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="{{url('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="{{url('plugins/summernote/summernote-bs4.css')}}">
+  <link rel="stylesheet" href="{{url('plugins/toastr/toastr.min.css')}}">
   <style>
     tr{
       padding: 5px;
@@ -234,6 +235,7 @@
 <script src="{{url('plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
 <script src="{{url('sweetalert/sweetalert2.min.js')}}"></script>
 <script src="{{url('plugins/summernote/summernote-bs4.min.js')}}"></script>
+<script src="{{url('plugins/toastr/toastr.min.js')}}"></script>
 <script>
   $(function () {
     // Summernote
@@ -272,7 +274,13 @@
         }
       })
     });
+
+    <?php if(Session::has('alert-success')){ ?>       
+      toastr.success('{{ \Illuminate\Support\Facades\Session::get('alert-success') }}');        
+    <?php } ?>
   });
+  
+  
 </script>
 </body>
 </html>
