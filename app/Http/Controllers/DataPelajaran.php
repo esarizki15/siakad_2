@@ -3,25 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Kelas;
-use App\Jurusan;
+use App\Mata_pelajaran;
 
-class DataKelas extends Controller
+class DataPelajaran extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct(){
-        $this->middleware('auth');
-    }
-    
     public function index()
     {
-        $title = "Data Kelas";
-        $kelas = Kelas::orderBy('nama_kelas','asc')->get();
-        return view('kelas', compact('title','kelas'));
+        $title = "Mata Pelajaran";
+        $mapel = Mata_pelajaran::all();
+        return view('mapel',compact('title','mapel'));
     }
 
     /**
@@ -31,9 +26,8 @@ class DataKelas extends Controller
      */
     public function create()
     {
-        $title = "Tambah Data Kelas";
-        $jurusan = Jurusan::all();
-        return view('kelasadd',compact('title','jurusan'));
+        $title = "Tambah Mata Pelajaran";
+        return view('mapeladd',compact('title'));
     }
 
     /**
@@ -44,11 +38,12 @@ class DataKelas extends Controller
      */
     public function store(Request $request)
     {
-        $kelas = new Kelas();
-        $kelas->nama_kelas = $request->nama_kelas;
-        $kelas->jurusan_id = $request->id_jurusan;
-        $kelas->save();
-        return redirect('kelas')->with('alert-success','Data Kelas berhasil ditambahkan');
+        $data = new Mata_pelajaran();
+        $data->kode_mapel = $request->kode_mapel;
+        $data->nama_mapel = $request->nama_mapel;
+        $data->jenis_mapel = $request->jenis_mapel;
+        $data->save();
+        return redirect('mata-pelajaran')->with('alert-success','Berhasil menyimpan data mata pelajaran');
     }
 
     /**
@@ -70,10 +65,9 @@ class DataKelas extends Controller
      */
     public function edit($id)
     {
-        $title = "Perbaharui Data Kelas";
-        $kelas = Kelas::find($id);
-        $jurusan = Jurusan::all();
-        return view('kelasedit', compact('title','kelas','jurusan'));
+        $title = "Perbaharui data mata pelajaran";
+        $mapel = Mata_pelajaran::find($id)->first();
+        return view('mapeledit', compact('title','mapel'));
     }
 
     /**
@@ -85,11 +79,12 @@ class DataKelas extends Controller
      */
     public function update(Request $request, $id)
     {
-        $kelas = Kelas::find($id);
-        $kelas->nama_kelas = $request->nama_kelas;
-        $kelas->jurusan_id = $request->id_jurusan;
-        $kelas->save();
-        return redirect('kelas')->with('alert-success', 'Data kelas berhasil diperbaharui');
+        $data = Mata_pelajaran::find($id);
+        $data->kode_mapel = $request->kode_mapel;
+        $data->nama_mapel = $request->nama_mapel;
+        $data->jenis_mapel = $request->jenis_mapel;
+        $data->save();
+        return redirect('mata-pelajaran')->with('alert-success','Berhasil memperbaharui data mata pelajaran');
     }
 
     /**
@@ -100,7 +95,7 @@ class DataKelas extends Controller
      */
     public function destroy($id)
     {
-        Kelas::find($id)->delete();
-        return redirect('kelas')->with('alert-success','Berhasil menghapus data kelas');
+        Mata_pelajaran::find($id)->delete();
+        return redirect('mata-pelajaran')->with('alert-success','Berhasil menghapus data mata pelajaran');
     }
 }

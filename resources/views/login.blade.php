@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{url('plugins/fontawesome-free/css/all.min.css')}}">
   <link rel="stylesheet" href="{{url('dist/css/adminlte.min.css')}}">
-  <link rel="stylesheet" href="{{url('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <style>
   .login-page{
@@ -23,6 +22,12 @@
     .kelas{
       text-transform: uppercase;
     }
+    .card{
+      border-radius: 0px;
+    }
+    .card-header{
+      border-radius: 0px;
+    }
   </style>
 </head>
 <body class="login-page">
@@ -36,7 +41,7 @@
           <input type="email" name="username" class="form-control" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+              <span class="fas fa-user"></span>
             </div>
           </div>
         </div>
@@ -54,19 +59,19 @@
             </div>
           </div>
           <div class="col-4">
-            <button type="submit" class="btn btn-primary bg-gradient-primary btn-block btn-flat">Masuk</button>
+            <button type="submit" class="btn btn-primary bg-gradient-primary btn-block btn-flat btn-sm"><i class="fa fa-key"></i> Masuk</button>
           </div>
         </div>
       </form>
 
-      <div class="social-auth-links text-center mb-3">
-        <a href="#" class="btn btn-block btn-primary bg-gradient-primary">
+      <!-- <div class="social-auth-links text-center mb-3">
+        <a href="#" class="btn btn-block btn-primary bg-gradient-primary btn-sm">
           <i class="fab fa-facebook mr-2"></i> Masuk dengan Akun Facebook
         </a>
-        <a href="#" class="btn btn-block btn-danger">
+        <a href="#" class="btn btn-block btn-danger btn-sm">
           <i class="fab fa-google mr-2"></i> Masuk dengan Akun Google
         </a>
-      </div>
+      </div> -->
       <!-- /.social-auth-links -->
 
       
@@ -84,33 +89,6 @@
   $.widget.bridge('uibutton', $.ui.button)
 </script>
 <script src="{{url('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{url('plugins/chart.js/Chart.min.js')}}"></script>
-<script src="{{url('plugins/sparklines/sparkline.js')}}"></script>
-<script src="{{url('plugins/jqvmap/jquery.vmap.min.js')}}"></script>
-<script src="{{url('plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
-<script src="{{url('plugins/jquery-knob/jquery.knob.min.js')}}"></script>
-<script src="{{url('plugins/moment/moment.min.js')}}"></script>
-<script src="{{url('plugins/daterangepicker/daterangepicker.js')}}"></script>
-<script src="{{url('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
-<script src="{{url('plugins/summernote/summernote-bs4.min.js')}}"></script>
-<script src="{{url('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
-<script src="{{url('dist/js/adminlte.js')}}"></script>
-<script src="{{url('dist/js/pages/dashboard.js')}}"></script>
-<script src="{{url('dist/js/demo.js')}}"></script>
-<script src="{{url('plugins/datatables/jquery.dataTables.js')}}"></script>
-<script src="{{url('plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
-<script>
-  $(function () {
-    $("#example1").DataTable();
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": true,
-    });
-  });
-</script>
+
 </body>
 </html>

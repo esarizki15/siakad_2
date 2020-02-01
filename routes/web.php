@@ -74,7 +74,15 @@ Route::get('tahun-ajaran/delete/{id}','DataTahunajaran@destroy');
 //Kalender Akademik
 Route::get('kalender-akademik','KalenderAkademik@index');
 Route::get('kalender-akademik/add','KalenderAkademik@create');
-Route::get('kalender-akademik/save','KalenderAkademik@store');
+Route::post('kalender-akademik/save','KalenderAkademik@store');
 Route::get('kalender-akademik/edit/{id}','KalenderAkademik@edit');
-Route::get('kalender-akademik/update/{id}', 'KalenderAkademik@update');
+Route::put('kalender-akademik/update/{id}', 'KalenderAkademik@update');
 Route::get('kalender-akademik/delete{id}', 'KalenderAkademik@destroy');
+
+
+//Mata Pelajaran
+Route::get('mata-pelajaran','DataPelajaran@index');
+Route::get('mata-pelajaran/add','DataPelajaran@create');
+Route::post('mata-pelajaran/save','DataPelajaran@store');
+Route::get('mata-pelajaran/edit/{id}','DataPelajaran@edit');
+Route::put('mata-pelajaran/update/{id}','DataPelajaran@update');

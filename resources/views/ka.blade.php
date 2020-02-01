@@ -18,7 +18,7 @@
          <div class="row">
             <div class="col-md-12">
                <div class="card">
-                  <div class="card-header bg-primary">
+                  <div class="card-header main bg-primary">
                      <h3 class="card-title">
                         <a href="{{url('/kalender-akademik/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Input Data</a>
                         <a href="{{url('/guru/recovery/')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-trash"></i> Recovery</a>
@@ -28,7 +28,7 @@
                   <table id="example1" class="table table-bordered table-striped table-sm">
                      <thead>
                      <tr>
-                        <th>No</th>
+                        <th class="text-center">No</th>
                         <th>Tanggal</th>
                         <th>Judul</th>
                         <th>Author</th>

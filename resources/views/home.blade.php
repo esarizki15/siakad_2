@@ -22,7 +22,7 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>{{@$jumlah_guru}}</h3>
+                <h3><i class="fa fa-graduation-cap"></i> {{@$jumlah_guru}}</h3>
                 <p>Tenaga Pendidik</p>
               </div>
               <div class="icon">
@@ -52,9 +52,9 @@
           </style>
           <div class="col-lg-3 col-6">
 
-            <div class="small-box bg-warning">
+            <div class="small-box bg-info">
               <div class="inner text-white">
-                <h3>{{@$jumlah_kelas}}</h3>
+                <h3><i class="fa fa-users"></i> {{@$jumlah_kelas}}</h3>
                 <p>Kelas</p>
               </div>
               <div class="icon">
@@ -67,7 +67,7 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>{{@$jumlah_jurusan}}</h3>
+                <h3><i class="fa fa-cog"></i> {{@$jumlah_jurusan}}</h3>
                 <p>Jurusan</p>
               </div>
               <div class="icon">

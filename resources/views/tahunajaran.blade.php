@@ -18,7 +18,7 @@
          <div class="row">
             <div class="col-md-12">
                <div class="card">
-                  <div class="card-header bg-primary">
+                  <div class="card-header main bg-primary">
                      <h3 class="card-title">
                         <a href="{{url('/tahun-ajaran/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
                         <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-download"></i> Export</a>
@@ -30,7 +30,7 @@
                   <table id="example1" class="table table-striped table-sm">
                      <thead>
                      <tr>
-                        <th>No</th>
+                        <th class="text-center">No</th>
                         <th>Tahun Ajaran</th>
                         <th>Status</th>
                         <th></th>

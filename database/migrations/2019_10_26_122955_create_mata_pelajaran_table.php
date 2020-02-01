@@ -17,8 +17,7 @@ class CreateMataPelajaranTable extends Migration
             $table->bigIncrements('mata_pelajaran_id');
             $table->char('kode_mapel');
             $table->string('nama_mapel');
-            $table->integer('jenis_mapel_id');
-            $table->integer('kurikulum_id');
+            $table->char('jenis_mapel');
             $table->timestamps();
         });
     }

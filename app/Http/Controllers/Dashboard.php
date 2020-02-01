@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 use App\Siswa;
 use App\Guru;
 use App\Jurusan;
@@ -15,6 +17,7 @@ class Dashboard extends Controller
         $this->middleware('auth');
     }
     public function index(){
+        $users = Auth::user();
         $title = "Dashboard";
         $jumlah_siswa = Siswa::join('kelas','kelas.kelas_id', '=', 'siswa.kelas_id')->where('kelas.status',true)->count();
         $jumlah_guru = Guru::count();
@@ -25,7 +28,8 @@ class Dashboard extends Controller
                                     'jumlah_siswa',
                                     'jumlah_guru',
                                     'jumlah_kelas',
-                                    'jumlah_jurusan'
+                                    'jumlah_jurusan',
+                                    'users'
                                     ));
     }
 }

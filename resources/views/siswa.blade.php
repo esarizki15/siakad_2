@@ -17,25 +17,25 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
-            
                <div class="card">
-                  <div class="card-header bg-primary">
+                  <div class="card-header main bg-primary">
                      <h3 class="card-title">
                         <a href="{{url('/siswa/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah Siswa</a>
                         <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-download"></i> Export</a>
                         <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-upload"></i> Import</a>
+                        <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-trash"></i></a>
                      </h3>
                   </div>
                   <div class="card-body">
                   <table id="example1" class="table table-bordered table-striped table-sm">
                      <thead>
                      <tr>
-                        <th>No</th>
-                        <th>NIS</th>
+                        <th class="text-center">No</th>
                         <th>NISN</th>
+                        <th>NIS</th>
                         <th>Nama Siswa</th>
                         <th>Kelas</th>
-                        <th>Jenis Kelamin</th>
+                        <th>JK</th>
                         <th></th>
                      </tr>
                      </thead>
@@ -43,18 +43,12 @@
                      <?php $no = 1; ?>
                      @foreach($siswa as $row)
                      <tr>
-                        <td><?php echo $no++; ?></td>
-                        <td>{{$row->nis}}</td>
+                        <td class="text-center"><?php echo $no++; ?></td>
                         <td>{{$row->nisn}}</td>
+                        <td>{{$row->nis}}</td>
                         <td>{{$row->nama_siswa}}</td>
                         <td>{{@$row->kelas->nama_kelas}}</td>
-                        <td>
-                        @if($row->jk=='P')
-                           <span class="badge badge-warning"><i class="fa fa-venus"></i></span> {{$row->jk}}
-                        @elseif($row->jk=='L')
-                           <span class="badge badge-primary"><i class="fa fa-mars"></i></span> {{$row->jk}}
-                        @endif
-                        </td>
+                        <td width="50" class="text-center">{{$row->jk}}</td>
                         <td width="160" class="text-center">
                            <a href="{{url('siswa/update/'.$row->siswa_id)}}" class="btn btn-primary bg-gradient-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
                            <a href="{{url('siswa/delete/'.$row->siswa_id)}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>

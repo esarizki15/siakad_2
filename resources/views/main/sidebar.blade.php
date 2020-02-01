@@ -26,8 +26,17 @@
     .content-wrapper{
       margin-top: 60px;
     }
+    .main{
+      padding: 7px;
+    }
+    .card{
+      border-radius:0px;
+    }
     .card-header{
-      padding: 5px;
+      border-radius:0px;
+    }
+    .btn{
+      border-radius: 0px;
     }
   </style>
 </head>
@@ -56,26 +65,27 @@
       <span class="brand-text font-weight-light">Siakad SMK</span>
     </a>
 
-    <div class="sidebar">
+    <div class="sidebar bg-default">
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="{{url('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">{{Auth::user()->name}}</a>
         </div>
       </div>
 
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="{{url('/dashboard')}}" class="nav-link">
+            <a href="{{url('/dashboard')}}" class="nav-link bg-warning">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Dashboard
               </p>
             </a>
           </li>
+          <li class="nav-header">MASTER DATA</li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-graduation-cap"></i>
@@ -134,48 +144,38 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-calendar"></i>
-              <p>
-                Akademik
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
+          <li class="nav-header">AKADEMIK</li>
+          <li class="nav-item">
                 <a href="{{url('/tahun-ajaran')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-calendar nav-icon"></i>
                   <p>Tahun Ajaran</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{url('/kalender-akademik')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-calendar nav-icon"></i>
                   <p>Kalender Akademik</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('/siswa')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="{{url('/mata-pelajaran')}}" class="nav-link">
+                  <i class="fas fa-book nav-icon"></i>
                   <p>Mata Pelajaran</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{url('/kelas')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-calendar-check nav-icon"></i>
                   <p>Jadwal Pelajaran</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{url('/kelas')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-book-open nav-icon"></i>
                   <p>Nilai Siswa</p>
                 </a>
               </li>
-            </ul>
-          </li>
-          <li class="nav-header">EXAMPLES</li>
+          <li class="nav-header">KONFIGURASI</li>
           <li class="nav-item">
             <a href="pages/gallery.html" class="nav-link">
               <i class="nav-icon fas fa-cog"></i>
@@ -186,7 +186,7 @@
           </li>
           <li class="nav-item">
             <a href="pages/gallery.html" class="nav-link">
-              <i class="nav-icon fa fa-info-circle"></i>
+              <i class="nav-icon fas fa-info-circle"></i>
               <p>
                 Tentang Aplikasi
               </p>
@@ -204,8 +204,6 @@
         <b>Version</b> 3.0.0-rc.3
       </div>
   </footer>
-  <aside class="control-sidebar control-sidebar-dark">
-  </aside>
 </div>
 
 <script src="{{url('plugins/jquery/jquery.min.js')}}"></script>
@@ -276,7 +274,8 @@
     });
 
     <?php if(Session::has('alert-success')){ ?>       
-      toastr.success('{{ \Illuminate\Support\Facades\Session::get('alert-success') }}');        
+      toastr.success('{{ \Illuminate\Support\Facades\Session::get('alert-success') }}');
+
     <?php } ?>
   });
   
