@@ -22,36 +22,46 @@
     .kelas{
       text-transform: uppercase;
     }
-    .card{
+    /* .card{
       border-radius: 0px;
     }
     .card-header{
       border-radius: 0px;
-    }
+    } */
   </style>
 </head>
 <body class="login-page">
 <div class="login-box">
   <div class="card">
-    <div class="card-header"><h2>Login</h2></div>
+    <div class="card-header">Login Administrator</div>
     <div class="card-body login-card-body">
       <form action="{{url('login')}}" method="post">
       {{csrf_field()}}
-        <div class="input-group mb-3">
-          <input type="email" name="username" class="form-control" placeholder="Email">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-user"></span>
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <input type="email" name="email" class="form-control" placeholder="Email">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-user"></span>
+                </div>
+              </div>
             </div>
-          </div>
+            @error('email')
+              <span class="text-danger" role="alert">{{ $message }}</span>
+            @enderror
         </div>
-        <div class="input-group mb-3">
-          <input type="password" name="password" class="form-control" placeholder="Password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <input type="password" name="password" class="form-control" placeholder="Password">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
             </div>
-          </div>
+            @error('password')
+              <span class="text-danger" role="alert">{{ $message }}</span>
+            @enderror
         </div>
         <div class="row">
           <div class="col-8">
@@ -78,7 +88,7 @@
     </div>
     <div class="card-footer">
     <p class="mb-1">
-        <a href="#">Saya lupa kata sandi</a>
+        <a href="{{url('password/reset')}}" class="btn btn-link btn-sm">Saya lupa kata sandi</a>
       </p>
     </div>
   </div>

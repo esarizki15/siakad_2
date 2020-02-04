@@ -2,7 +2,6 @@
 
 
 Route::get('/', 'Login@index');
-Route::post('login','Login@getauth');
 Route::get('/dashboard','Dashboard@index');
 
 //Auth
@@ -86,3 +85,14 @@ Route::get('mata-pelajaran/add','DataPelajaran@create');
 Route::post('mata-pelajaran/save','DataPelajaran@store');
 Route::get('mata-pelajaran/edit/{id}','DataPelajaran@edit');
 Route::put('mata-pelajaran/update/{id}','DataPelajaran@update');
+Route::get('mata-pelajaran/delete/{id}','DataPelajaran@destroy');
+
+//Jadwal Pelajaran
+Route::get('jadwal-pelajaran','JadwalPelajaran@index');
+Route::get('jadwal-pelajaran/add','JadwalPelajaran@create');
+Route::post('jadwal-pelajaran/save','JadwalPelajaran@store');
+Route::get('jadwal-pelajaran/edit/{id}','JadwalPelajaran@edit');
+Route::put('jadwal-pelajaran/update/{id}','JadwalPelajaran@update');
+Route::get('jadwal-pelajaran/delete/{id}','JadwalPelajaran@destroy');
+
+Route::get('gen','JadwalPelajaran@generateDay');

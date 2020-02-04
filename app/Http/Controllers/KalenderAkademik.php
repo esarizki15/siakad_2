@@ -12,6 +12,10 @@ class KalenderAkademik extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $title = "Kalender Akademik";
@@ -42,7 +46,7 @@ class KalenderAkademik extends Controller
         $data->title = $request->judul;
         $data->content = $request->isi;
         $data->tgl = $request->tanggal;
-        $data->created_by = "Mimin Siakad";
+        $data->created_by = "miimin";
         $data->save();
         return redirect('kalender-akademik')->with('alert-success','Berhasil menyimpan kalender akademik');
     }

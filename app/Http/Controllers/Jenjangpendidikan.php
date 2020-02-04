@@ -15,6 +15,7 @@ class Jenjangpendidikan extends Controller
     public function __construct(){
         $this->middleware('auth');
     }
+    
     public function index()
     {
         $title = "Jenjang Pendidikan";

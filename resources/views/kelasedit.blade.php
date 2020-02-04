@@ -39,6 +39,17 @@
                            @endforeach
                         </select>
                      </div>
+                     <div class="form-group col-md-6">
+                        <label for="exampleInputPassword1">Status</label><br>
+                        <div class="custom-control custom-radio">
+                          <input @if($kelas->status=="1") {{"checked"}} @endif class="custom-control-input" type="radio" name="status" value="1" id="customRadio2" name="customRadio">
+                          <label for="customRadio2" class="custom-control-label">Aktif</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input @if($kelas->status=="0") {{"checked"}} @endif class="custom-control-input" type="radio" name="status" value="0" id="customRadio1" name="customRadio">
+                          <label for="customRadio1" class="custom-control-label">Tidak Aktif</label>
+                        </div>
+                     </div>
                   </div>
                 <div class="card-footer">
                 <a class="btn btn-danger bg-gradient-danger btn-sm" href="{{url('kelas/')}}"><i class="fa fa-chevron-circle-left"></i> Kembali</a>

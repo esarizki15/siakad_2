@@ -45,7 +45,7 @@
                         <td>{{$row->jenis_mapel}}</td>                     
                         <td class="text-center">
                            <a href="{{url('mata-pelajaran/edit/'.$row->mata_pelajaran_id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
-                           <a href="{{url('mata-pelajaran/hapus/'.$row->mata_pelajaran_id)}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                           <a href="{{url('mata-pelajaran/delete/'.$row->mata_pelajaran_id)}}" class="btn btn-danger btn-sm hapus"><i class="fa fa-trash"></i> Hapus</a>
                         </td>
                      </tr>
                   </tbody>

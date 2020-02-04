@@ -42,7 +42,13 @@
                      <td>{{$no++}}</td>
                      <td style="text-transform: uppercase;">{{$row->nama_kelas}}</td>
                      <td>{{@$row->jurusan->nama_jurusan}}</td>
-                     <td><span class="badge badge-primary">Aktif</span></td>
+                     <td class="text-center">
+                        @if($row->status==1)
+                        <span class="badge badge-primary">Aktif</span>
+                        @elseif($row->status==0)
+                        <span class="badge badge-danger">Tidak Aktif</span>
+                        @endif
+                     </td>
                      <td class="text-center" width="250">
                         <a href="{{url('kelas/edit/'.$row->kelas_id)}}" class="btn btn-success btn-sm"><i class="fa fa-edit"></i> Edit</a>
                         <a href="{{url('kelas/delete/'.$row->kelas_id)}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Recovery</a>

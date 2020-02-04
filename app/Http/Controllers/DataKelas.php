@@ -47,6 +47,7 @@ class DataKelas extends Controller
         $kelas = new Kelas();
         $kelas->nama_kelas = $request->nama_kelas;
         $kelas->jurusan_id = $request->id_jurusan;
+        $kelas->status = $request->status;
         $kelas->save();
         return redirect('kelas')->with('alert-success','Data Kelas berhasil ditambahkan');
     }
@@ -88,6 +89,7 @@ class DataKelas extends Controller
         $kelas = Kelas::find($id);
         $kelas->nama_kelas = $request->nama_kelas;
         $kelas->jurusan_id = $request->id_jurusan;
+        $kelas->status = $request->status;
         $kelas->save();
         return redirect('kelas')->with('alert-success', 'Data kelas berhasil diperbaharui');
     }

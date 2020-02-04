@@ -8,8 +8,6 @@
   <link rel="stylesheet" href="{{url('plugins/fontawesome-free/css/all.min.css')}}">
   <link rel="stylesheet" href="{{url('dist/css/adminlte.min.css')}}">
   <link rel="stylesheet" href="{{url('sweetalert/sweetalert2.min.css')}}">
-  <link rel="stylesheet" href="{{url('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="{{url('plugins/summernote/summernote-bs4.css')}}">
   <link rel="stylesheet" href="{{url('plugins/toastr/toastr.min.css')}}">
   <style>
@@ -164,7 +162,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('/kelas')}}" class="nav-link">
+                <a href="{{url('/jadwal-pelajaran')}}" class="nav-link">
                   <i class="fas fa-calendar-check nav-icon"></i>
                   <p>Jadwal Pelajaran</p>
                 </a>
@@ -207,27 +205,10 @@
 </div>
 
 <script src="{{url('plugins/jquery/jquery.min.js')}}"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="{{url('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
 <script src="{{url('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- ChartJS -->
-<script src="{{url('plugins/chart.js/Chart.min.js')}}"></script>
-<!-- daterangepicker -->
-<script src="{{url('plugins/moment/moment.min.js')}}"></script>
-<!-- Moment -->
-<script src="{{url('plugins/daterangepicker/daterangepicker.js')}}"></script>
-<!-- Tempusdominus Bootstrap 4 -->
 <script src="{{url('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
-<!-- AdminLTE App -->
 <script src="{{url('dist/js/adminlte.js')}}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{url('dist/js/pages/dashboard.js')}}"></script>
-<!-- AdminLTE for demo purposes -->
 <script src="{{url('dist/js/demo.js')}}"></script>
 <script src="{{url('plugins/datatables/jquery.dataTables.js')}}"></script>
 <script src="{{url('plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
@@ -235,12 +216,10 @@
 <script src="{{url('plugins/summernote/summernote-bs4.min.js')}}"></script>
 <script src="{{url('plugins/toastr/toastr.min.js')}}"></script>
 <script>
-  $(function () {
+ $(function () {
     // Summernote
     $('.textarea').summernote()
-  })
-</script>
-<script>
+  });
   $(function () {
     $("#example1").DataTable();
     $('#example2').DataTable({
@@ -252,7 +231,7 @@
       "autoWidth": true,
     });
   });
-
+  
   $(document).ready(function(){
     $('.hapus').on('click', function(){
       event.preventDefault();
