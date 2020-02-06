@@ -30,6 +30,7 @@
                 <tr>
                   <th class="text-center">No</th>
                   <th>Nama Kelas</th>
+                  <th>Tahun Masuk</th>
                   <th>Jurusan</th>
                   <th>Status</th>
                   <th></th>
@@ -41,7 +42,8 @@
                   <tr>
                      <td>{{$no++}}</td>
                      <td style="text-transform: uppercase;">{{$row->nama_kelas}}</td>
-                     <td>{{@$row->jurusan->nama_jurusan}}</td>
+                     <td>{{@$row->tahunajaran->tahun_ajaran}}</td>
+                     <td class="text-center">{{@$row->jurusan->nama_jurusan}}</td>
                      <td class="text-center">
                         @if($row->status==1)
                         <span class="badge badge-primary">Aktif</span>

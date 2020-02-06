@@ -49,7 +49,7 @@
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link text-white" data-widget="control-sidebar" data-slide="true" href="#">
+        <a class="nav-link text-white" href="{{url('logout')}}">
           <i class="fas fa-sign-out-alt"></i> Keluar
         </a>
       </li>
@@ -76,7 +76,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="{{url('/dashboard')}}" class="nav-link bg-warning">
+            <a href="{{url('/dashboard')}}" class="nav-link bg-danger">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Dashboard

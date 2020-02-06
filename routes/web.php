@@ -2,6 +2,7 @@
 
 
 Route::get('/', 'Login@index');
+Route::get('logout','Login@logout');
 Route::get('/dashboard','Dashboard@index');
 
 //Auth

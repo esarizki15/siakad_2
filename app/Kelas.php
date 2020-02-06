@@ -13,6 +13,10 @@ class Kelas extends Model
 		return $this->belongsTo('App\Jurusan','jurusan_id');
 	}
 
+	function tahunajaran(){
+		return $this->belongsTo('App\Tahunajaran','tahun_ajaran_id');
+	}
+
 	function siswa(){
 		return $this->hasOne('App\Siswa','kelas_id');
 	}

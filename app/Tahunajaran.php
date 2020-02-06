@@ -8,4 +8,8 @@ class Tahunajaran extends Model
 {
     protected $table = 'tahun_ajaran';
     protected $primaryKey = 'tahun_ajaran_id';
+
+    function kelas(){
+        return $this->hasOne('App\Tahunajaran','tahun_ajaran_id');
+    }
 }

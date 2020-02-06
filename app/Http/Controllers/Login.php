@@ -21,4 +21,11 @@ class Login extends Controller
 
         return redirect('dashboard');
     }
+
+    function logout()
+    {
+        Auth::logout();
+        
+        return redirect('/')->with('alert-success','Berhasil logout');
+    }
 }

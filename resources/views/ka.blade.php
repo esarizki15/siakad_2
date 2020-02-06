@@ -20,7 +20,7 @@
                <div class="card">
                   <div class="card-header main bg-primary">
                      <h3 class="card-title">
-                        <a href="{{url('/kalender-akademik/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Input Data</a>
+                        <a href="{{url('/kalender-akademik/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fas fa-pencil"></i> Input Data</a>
                         <a href="{{url('/guru/recovery/')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-trash"></i> Recovery</a>
                      </h3>
                   </div>
