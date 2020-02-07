@@ -96,4 +96,13 @@ Route::get('jadwal-pelajaran/edit/{id}','JadwalPelajaran@edit');
 Route::put('jadwal-pelajaran/update/{id}','JadwalPelajaran@update');
 Route::get('jadwal-pelajaran/delete/{id}','JadwalPelajaran@destroy');
 
+//Pengaturan
+Route::get('pengaturan','Setting@index');
+Route::get('pengaturan/profile','Setting@edit');
+Route::put('pengaturan/profile/update/{id}','Setting@update');
+Route::get('pengaturan/siswa-update-data/{id}','Setting@siswa_lihat_data');
+
+
+
 Route::get('gen','JadwalPelajaran@generateDay');
+

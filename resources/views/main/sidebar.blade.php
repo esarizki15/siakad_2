@@ -36,6 +36,25 @@
     .btn{
       border-radius: 0px;
     }
+    ::-webkit-scrollbar {
+      width: 8px;
+      border-radius: 8px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #292b2c;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
   </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -60,7 +79,7 @@
     <a href="{{url('/')}}" class="brand-link">
       <img src="{{url('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Siakad SMK</span>
+      <span class="brand-text font-weight-light">Admin <b>LTE</b></span>
     </a>
 
     <div class="sidebar bg-default">
@@ -175,8 +194,8 @@
               </li>
           <li class="nav-header">KONFIGURASI</li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
-              <i class="nav-icon fas fa-cog"></i>
+            <a href="{{url('pengaturan')}}" class="nav-link">
+              <i class="nav-icon fas fa-cogs"></i>
               <p>
                 Pengaturan
               </p>
