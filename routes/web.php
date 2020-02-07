@@ -1,7 +1,8 @@
 <?php
 
-
-Route::get('/', 'Login@index');
+Auth::routes();
+Route::get('/', 'Login@index')->name('login');
+Route::get('/login', 'LoginController@index')->name('login');
 Route::get('logout','Login@logout');
 Route::get('/dashboard','Dashboard@index');
 
