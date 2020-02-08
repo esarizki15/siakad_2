@@ -31,23 +31,23 @@
                      <div class="row">
                      <div class="form-group col-md-6">
                         <label for="exampleInputEmail1">NIK</label>
-                        <input value="{{$guru->nik}}" required type="text" name="nik" class="form-control" id="exampleInputEmail1" placeholder="Nomor Induk Kewarganegaraan">
+                        <input value="{{$guru->nik}}" required type="text" name="nik" class="form-control"  placeholder="Nomor Induk Kewarganegaraan">
                      </div>
                      <div class="form-group col-md-6">
                         <label for="exampleInputEmail1">NIP</label>
-                        <input value="{{$guru->nip}}" required type="text" name="nip" class="form-control" id="exampleInputEmail1" placeholder="Nomor Induk Kepegawaian">
+                        <input value="{{$guru->nip}}" required type="text" name="nip" class="form-control"  placeholder="Nomor Induk Kepegawaian">
                      </div>
                      <div class="form-group col-md-6">
                         <label for="exampleInputEmail1">Nama Lengkap</label>
-                        <input value="{{$guru->nama_lengkap}}" required type="text" name="nama_lengkap" class="form-control" id="exampleInputEmail1" placeholder="Nama Lengkap">
+                        <input value="{{$guru->nama_lengkap}}" required type="text" name="nama_lengkap" class="form-control"  placeholder="Nama Lengkap">
                      </div>
                      <div class="form-group col-md-6">
                         <label for="exampleInputEmail1">Alamat</label>
-                        <input value="{{$guru->alamat}}" required type="text" name="alamat" class="form-control" id="exampleInputEmail1" placeholder="Alamat">
+                        <input value="{{$guru->alamat}}" required type="text" name="alamat" class="form-control"  placeholder="Alamat">
                      </div>
                      <div class="form-group col-md-6">
                         <label for="exampleInputEmail1">Telepon</label>
-                        <input value="{{$guru->telepon}}" required type="text" name="telepon" class="form-control" id="exampleInputEmail1" placeholder="Telepon">
+                        <input value="{{$guru->telepon}}" required type="text" name="telepon" class="form-control"  placeholder="Telepon">
                      </div>
                      <div class="form-group col-md-6">
                         <label for="exampleInputPassword1">Pilih Jenjang Pendidikan</label>

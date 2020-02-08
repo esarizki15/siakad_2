@@ -20,6 +20,13 @@
     .kelas{
       text-transform: uppercase;
     }
+
+    th{
+      color: white;
+      font-weight: 200;
+      background-color: #888;
+      text-align: center;
+    }
     
     .content-wrapper{
       margin-top: 60px;
@@ -33,9 +40,9 @@
     .card-header{
       border-radius:0px;
     }
-    .btn{
+    /* .btn{
       border-radius: 0px;
-    }
+    } */
     ::-webkit-scrollbar {
       width: 8px;
       border-radius: 8px;
@@ -269,6 +276,21 @@
           
         }
       })
+    });
+
+    $('#data-guru').on('click','.detail-guru', function(){
+      var id = $(this).data('id');
+      $.ajax({
+        url : '<?php echo url('guru/detail/') ?>/' + id,
+        type : 'GET',
+        dataType : 'JSON',
+        success:function(response){
+          console.log(response.guru_id);
+        },
+        error:function(response){
+          console.log(response);
+        }
+      });
     });
 
     <?php if(Session::has('alert-success')){ ?>       

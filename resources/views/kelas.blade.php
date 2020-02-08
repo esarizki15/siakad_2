@@ -20,8 +20,8 @@
          <div class="card">
             <div class="card-header main bg-primary">
                <h3 class="card-title">
-                  <a href="{{url('/kelas/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
-                  <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-trash"></i> Recovery</a>
+                  <a href="{{url('/kelas/add')}}" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
+                  <a href="" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-trash"></i> Recovery</a>
                </h3>
             </div>
             <div class="card-body">
@@ -52,8 +52,8 @@
                         @endif
                      </td>
                      <td class="text-center" width="250">
-                        <a href="{{url('kelas/edit/'.$row->kelas_id)}}" class="btn btn-success btn-sm"><i class="fa fa-edit"></i> Edit</a>
-                        <a href="{{url('kelas/delete/'.$row->kelas_id)}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Recovery</a>
+                        <a href="{{url('kelas/edit/'.$row->kelas_id)}}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                        <a href="{{url('kelas/delete/'.$row->kelas_id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Recovery</a>
                      </td>
                   </tr>
                   @endforeach

@@ -20,7 +20,7 @@
          <div class="card">
             <div class="card-header main bg-primary">
                <h3 class="card-title">
-                  <a href="{{url('/jurusan/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah Jurusan</a>
+                  <a href="{{url('/jurusan/add')}}" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-plus-circle"></i> Tambah Jurusan</a>
                </h3>
             </div>
             <div class="card-body">
@@ -41,8 +41,8 @@
                      <td>{{$row->singkatan}}</td>
                      <td>{{$row->nama_jurusan}}</td>
                      <td align="center" width="200">
-                        <a href="{{url('/jurusan/edit/'.$row->jurusan_id)}}" class="btn btn-primary bg-gradient-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
-                        <a href="{{url('/jurusan/delete/'.$row->jurusan_id)}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                        <a href="{{url('/jurusan/edit/'.$row->jurusan_id)}}" class="btn btn-primary bg-gradient-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                        <a href="{{url('/jurusan/delete/'.$row->jurusan_id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                      </td>
                   </tr>
                   @endforeach               

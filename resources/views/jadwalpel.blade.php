@@ -91,7 +91,7 @@
                               </div>
                            </div>
                            <div class="form-group col-md">
-                           <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-check"></i> Simpan</button>
+                           <button type="submit" class="btn btn-primary btn-xs"><i class="fas fa-check"></i> Simpan</button>
                            </div>
                            </form>
                         </div>

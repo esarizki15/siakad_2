@@ -26,14 +26,15 @@
             <div class="card">
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                  <h3 class="card-title text-primary"><i class="fa fa-globe"></i> Sistem Informasi Akademik</h3>
+                  <h3 class="card-title text-primary"><i class="fa fa-user"></i> Informasi Pengguna</h3>
                 </div>
               </div>
               <div class="card-body">
                 <div class="d-flex">
                   <p class="d-flex flex-column">
-                    <span class="text-bold text-lg">{{Auth::user()->name}}</span>
-                    <span>Visitors Over Time</span>
+                    <span>Masuk sebagai : </span>
+                    <span class="text-bold text-lg"><i class="fa fa-user"></i> {{Auth::user()->name}}</span>
+                    
                   </p>
                  </div>
                  </div>

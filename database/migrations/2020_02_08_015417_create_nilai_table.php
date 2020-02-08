@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRollUserTable extends Migration
+class CreateNilaiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateRollUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('roll_user', function (Blueprint $table) {
+        Schema::create('nilai', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('roll_name');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ class CreateRollUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roll_user');
+        Schema::dropIfExists('nilai');
     }
 }

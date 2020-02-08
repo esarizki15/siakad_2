@@ -20,8 +20,8 @@
                <div class="card">
                   <div class="card-header main bg-primary">
                      <h3 class="card-title">
-                        <a href="{{url('/kalender-akademik/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fas fa-pencil"></i> Input Data</a>
-                        <a href="{{url('/guru/recovery/')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-trash"></i> Recovery</a>
+                        <a href="{{url('/kalender-akademik/add')}}" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fas fa-pencil"></i> Input Data</a>
+                        <a href="{{url('/guru/recovery/')}}" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-trash"></i> Recovery</a>
                      </h3>
                   </div>
                   <div class="card-body">
@@ -44,8 +44,8 @@
                             <td>{{$row->title}}</td>
                             <td><i class="fa fa-user"></i> {{$row->created_by}}</td>
                             <td class="text-center">
-                                <a href="{{url('/kalender-akademik/edit/'.$row->kalender_akademik_id)}}" class="btn btn-primary bg-gradient-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
-                                <a href="{{url('/kalender-akademik/delete/'.$row->kalender_akademik_id)}}" class="btn btn-danger bg-gradient-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                                <a href="{{url('/kalender-akademik/edit/'.$row->kalender_akademik_id)}}" class="btn btn-primary bg-gradient-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                                <a href="{{url('/kalender-akademik/delete/'.$row->kalender_akademik_id)}}" class="btn btn-danger bg-gradient-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                             </td>
                         </tr>
                         @endforeach

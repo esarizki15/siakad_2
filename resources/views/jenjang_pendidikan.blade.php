@@ -20,7 +20,8 @@
          <div class="card">
             <div class="card-header main bg-primary">
                <h3 class="card-title">
-                  <a href="{{url('/jenjang-pendidikan/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
+                  <a href="{{url('/jenjang-pendidikan/add')}}" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
+                  
                </h3>
             </div>
             <div class="card-body">
@@ -41,9 +42,9 @@
                     <td>{{$row->jenjang_pendidikan}}</td>
                     <td>{{$row->jenjang_pendidikan_detail}}</td>
                     <td class="text-center" width="300">
-                        <a class="btn btn-success btn-sm" href="{{url('jenjang-pendidikan/edit/'.$row->jp_id)}}"><i class="fa fa-eye"></i> Detail</a>
-                        <a class="btn btn-primary bg-gradient-primary btn-sm" href="{{url('jenjang-pendidikan/edit/'.$row->jp_id)}}"><i class="fa fa-edit"></i> Edit</a>
-                        <a class="btn btn-danger btn-sm hapus" href="{{url('jenjang-pendidikan/delete/'.$row->jp_id)}}"><i class="fa fa-trash"></i> Hapus</a>
+                        <a class="btn btn-success btn-xs" href="{{url('jenjang-pendidikan/edit/'.$row->jp_id)}}"><i class="fa fa-eye"></i> Detail</a>
+                        <a class="btn btn-primary bg-gradient-primary btn-xs" href="{{url('jenjang-pendidikan/edit/'.$row->jp_id)}}"><i class="fa fa-edit"></i> Edit</a>
+                        <a class="btn btn-danger btn-xs hapus" href="{{url('jenjang-pendidikan/delete/'.$row->jp_id)}}"><i class="fa fa-trash"></i> Hapus</a>
                     </td>
                 </tr>
                 @endforeach

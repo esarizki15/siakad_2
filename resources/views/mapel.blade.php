@@ -20,8 +20,8 @@
          <div class="card">
             <div class="card-header main bg-primary">
                <h3 class="card-title">
-                  <a href="{{url('/mata-pelajaran/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
-                  <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-trash"></i> Recovery</a>
+                  <a href="{{url('/mata-pelajaran/add')}}" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
+                  <a href="" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-trash"></i> Recovery</a>
                </h3>
             </div>
             <div class="card-body">
@@ -44,8 +44,8 @@
                         <td>{{$row->nama_mapel}}</td>
                         <td>{{$row->jenis_mapel}}</td>                     
                         <td class="text-center">
-                           <a href="{{url('mata-pelajaran/edit/'.$row->mata_pelajaran_id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
-                           <a href="{{url('mata-pelajaran/delete/'.$row->mata_pelajaran_id)}}" class="btn btn-danger btn-sm hapus"><i class="fa fa-trash"></i> Hapus</a>
+                           <a href="{{url('mata-pelajaran/edit/'.$row->mata_pelajaran_id)}}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                           <a href="{{url('mata-pelajaran/delete/'.$row->mata_pelajaran_id)}}" class="btn btn-danger btn-xs hapus"><i class="fa fa-trash"></i> Hapus</a>
                         </td>
                      </tr>
                   </tbody>

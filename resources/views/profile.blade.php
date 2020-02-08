@@ -21,7 +21,7 @@
                 <h3 class="card-title"><i class="fa fa-edit"></i> {{$title}}</h3>
               </div>
               @foreach($profile as $row)
-                <form role="form" action="{{url('pengaturan/siswa-update-data/'.$row->id)}}" method="post">
+                <form role="form" action="{{url('pengaturan/profile/update/'.$row->id)}}" method="post">
                   {{csrf_field()}}
                   {{method_field('PUT')}}
                   <div class="card-body row">

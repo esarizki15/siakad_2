@@ -22,6 +22,17 @@
               <div class="card-header">
                 <h3 class="card-title"><i class="fa fa-plus-circle"></i> Tambah Siswa</h3>
               </div>
+              @if ($errors->any())
+               <div class="alert alert-warning bg-white alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><em>
+                  <ul>
+                     @foreach ($errors->all() as $error)
+                     <li>{{ $error }}</li>
+                     @endforeach
+                  </ul>
+                  </em>
+               </div>
+               @endif
               <form role="form" action="{{url('siswa/store')}}" method="post">
                   {{csrf_field()}}
                   

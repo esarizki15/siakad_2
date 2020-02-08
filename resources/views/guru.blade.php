@@ -20,10 +20,10 @@
                <div class="card">
                   <div class="card-header main bg-primary">
                      <h3 class="card-title">
-                        <a href="{{url('/guru/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Input Data</a>
-                        <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-download"></i> Export Data</a>
-                        <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-upload"></i> Import Data</a>
-                        <a href="{{url('/guru/recovery/')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-trash"></i> Data Terhapus</a>
+                        <a href="{{url('/guru/add')}}" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-plus-circle"></i> Input Data</a>
+                        <a href="" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-download"></i> Export Data</a>
+                        <a href="" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-upload"></i> Import Data</a>
+                        <a href="{{url('/guru/recovery/')}}" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-trash"></i> Data Terhapus</a>
                      </h3>
                   </div>
                   <div class="card-body">
@@ -38,7 +38,7 @@
                         <th></th>
                      </tr>
                      </thead>
-                     <tbody>
+                     <tbody id="data-guru">
                      <?php $no = 1; ?>
                      @foreach($guru as $row)
                         <tr>
@@ -56,9 +56,9 @@
                               @endif
                            </td>
                             <td class="text-center">
-                                 <a href="{{url('guru/edit/'.$row->guru_id)}}" class="btn btn-success btn-sm bg-gradient-success"><i class="fa fa-eye"></i> Detail</a>
-                                 <a href="{{url('guru/edit/'.$row->guru_id)}}" class="btn btn-primary bg-gradient-primary btn-sm"><i class="fa fa-edit"></i> Edit </a>
-                                 <a href="{{url('guru/trash/'.$row->guru_id)}}" class="btn btn-danger btn-sm bg-gradient-danger hapus"><i class="fa fa-trash"></i> Hapus</a>
+                                 <a href="{{url('guru/edit/'.$row->guru_id)}}" class="btn btn-success btn-xs bg-gradient-success detail-guru" data-id="{{$row->guru_id}}" data-toggle="modal" data-target="#modal-lg"><i class="fa fa-eye"></i> Detail</a>
+                                 <a href="{{url('guru/edit/'.$row->guru_id)}}" class="btn btn-primary bg-gradient-primary btn-xs"><i class="fa fa-edit"></i> Edit </a>
+                                 <a href="{{url('guru/trash/'.$row->guru_id)}}" class="btn btn-danger btn-xs bg-gradient-danger hapus"><i class="fa fa-trash"></i> Hapus</a>
                             </td> 
                         </tr>
                      @endforeach
@@ -71,4 +71,26 @@
       </div>
    </section>
 </div>
+
+<div class="modal fade" id="modal-lg">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Large Modal</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
 @endsection

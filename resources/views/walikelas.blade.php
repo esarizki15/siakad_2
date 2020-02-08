@@ -20,7 +20,7 @@
                <div class="card">
                   <div class="card-header main bg-primary">
                      <h3 class="card-title">
-                        <a href="{{url('/wali-kelas/add')}}" class="btn btn-primary bg-gradient-primary bg-gradient-dange btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
+                        <a href="{{url('/wali-kelas/add')}}" class="btn btn-primary bg-gradient-primary bg-gradient-dange btn-xs pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
                      </h3>
                   </div>
                   <div class="card-body">
@@ -41,8 +41,8 @@
                         <td>{{@$row->guru->nama_lengkap}}</td>
                         <td>{{@$row->kelas->nama_kelas}}</td>
                         <td class="text-center">
-                           <a href="{{url('wali-kelas/edit/'.$row->walikelas_id)}}" class="btn btn-primary bg-gradient-primary bg-gradient-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
-                           <a href="{{url('wali-kelas/delete/'.$row->walikelas_id)}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                           <a href="{{url('wali-kelas/edit/'.$row->walikelas_id)}}" class="btn btn-primary bg-gradient-primary bg-gradient-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                           <a href="{{url('wali-kelas/delete/'.$row->walikelas_id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                         </td>
                      </tr>
                      @endforeach

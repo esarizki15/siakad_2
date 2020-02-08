@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\RequestSiswa;
 use App\Siswa;
 use App\Kelas;
 
@@ -46,18 +47,21 @@ class DataSiswa extends Controller
 
     
 
-    public function store(Request $request)
+    public function store(RequestSiswa $request)
     {
-        $data = new Siswa();
-        $data->nis = $request->nis;
-        $data->nisn = $request->nisn;
-        $data->nama_siswa = $request->nama_siswa;
-        $data->alamat = $request->alamat;
-        $data->kelas_id = $request->id_kelas;
-        $data->jk = $request->jk;
-        $data->password = '1123';
-        $data->save();
-        return redirect('/siswa/add')->with('alert-success','Berhasil menyimpan data siswa'); 
+        
+            $data = new Siswa();
+            $data->nis = $request->nis;
+            $data->nisn = $request->nisn;
+            $data->nama_siswa = $request->nama_siswa;
+            $data->alamat = $request->alamat;
+            $data->kelas_id = $request->id_kelas;
+            $data->jk = $request->jk;
+            $data->username = $request->nis;
+            $data->password = $request->nis;
+            $data->save();
+            
+            return redirect('/siswa/add')->with('alert-success','Berhasil menyimpan data siswa'); 
     }
 
     /**
@@ -100,8 +104,8 @@ class DataSiswa extends Controller
         $siswa->nama_siswa = $request->nama_siswa;
         $siswa->alamat = $request->alamat;
         $siswa->kelas_id = $request->id_kelas;
-        $siswa->jk = $request->jk;
-        $siswa->password = '1123';
+        // $data->username = $request->nis;
+        // $data->password = $request->nis;
         $siswa->save();
         return redirect('/siswa')->with('alert-success','Berhasil memperbaharui data siswa'); 
     }

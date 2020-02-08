@@ -20,6 +20,7 @@ class CreateSiswaTable extends Migration
             $table->integer('nisn');
             $table->string('nama_siswa');
             $table->string('alamat');
+            $table->string('username');
             $table->string('password');
             $table->string('jk');
             $table->boolean('aktif')->default(true);

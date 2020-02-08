@@ -55,6 +55,7 @@ Route::get('guru/trash/{id}','DataGuru@soft_destroy');
 Route::get('guru/recovery/','DataGuru@recovery');
 Route::get('guru/restore/{id}','DataGuru@un_destroy');
 Route::get('guru/delete/{id}','DataGuru@destroy');
+Route::get('guru/detail/{id}','DataGuru@show');
 
 //Walikelas
 Route::get('wali-kelas','DataWalikelas@index');

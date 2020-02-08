@@ -22,11 +22,10 @@
          <div class="row">
          <div class="col-md-12">
          <div class="timeline">
-             
               <div>
                 <i class="fas fa-home bg-purple"></i>
                 <div class="timeline-item">
-                  <span class="time"><i class="fas fa-clock"></i> 12:05</span>
+                  <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/profile/')}}">Perbaharui</a></span>
                   <h3 class="timeline-header"><a href="#">Profile Sekolah</a></h3>
                 </div>
               </div>
@@ -39,37 +38,97 @@
                   @elseif($row->siswa_update_data == false)
                   <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/siswa-update-data/'.$row->id)}}">Aktifkan</a></span>
                   @endif
-                  <h3 class="timeline-header no-border"><a href="#">Siswa memperbaharui data</a></h3>
+                  <h3 class="timeline-header no-border"><a href="#">Siswa memperbaharui data pribadi</a></h3>
                 </div>
               </div>
               <div>
                 <i class="fas fa-cog bg-purple"></i>
                 <div class="timeline-item">
-                  <span class="time"></span>
+                  @if($row->siswa_lihat_siswa == true)
+                  <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/siswa-update-data/'.$row->id)}}">Nonaktifkan</a></span>
+                  @elseif($row->siswa_lihat_siswa == false)
+                  <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/siswa-update-data/'.$row->id)}}">Aktifkan</a></span>
+                  @endif
                   <h3 class="timeline-header no-border"><a href="#">Siswa melihat profile siswa lainnya</a></h3>
                 </div>
               </div>
               <div>
                 <i class="fas fa-cog bg-purple"></i>
                 <div class="timeline-item">
-                  <span class="time"></span>
+                  @if($row->siswa_lihat_guru == true)
+                  <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/siswa-update-data/'.$row->id)}}">Nonaktifkan</a></span>
+                  @elseif($row->siswa_lihat_guru == false)
+                  <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/siswa-update-data/'.$row->id)}}">Aktifkan</a></span>
+                  @endif
                   <h3 class="timeline-header no-border"><a href="#">Siswa melihat profile guru</a></h3>
                 </div>
               </div>
               <div>
                 <i class="fas fa-cog bg-purple"></i>
                 <div class="timeline-item">
-                  <span class="time"></span>
+                  @if($row->guru_update_data == true)
+                  <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/siswa-update-data/'.$row->id)}}">Nonaktifkan</a></span>
+                  @elseif($row->guru_update_data == false)
+                  <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/siswa-update-data/'.$row->id)}}">Aktifkan</a></span>
+                  @endif
                   <h3 class="timeline-header no-border"><a href="#">Guru memperbaharui data</a></h3>
                 </div>
               </div>
               <div>
                 <i class="fas fa-cog bg-purple"></i>
                 <div class="timeline-item">
-                  <span class="time"></span>
-                  <h3 class="timeline-header no-border"><a href="#">Guru memperbaharui data</a></h3>
+                  @if($row->guru_lihat_data_guru == true)
+                  <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/siswa-update-data/'.$row->id)}}">Nonaktifkan</a></span>
+                  @elseif($row->guru_lihat_data_guru == false)
+                  <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/siswa-update-data/'.$row->id)}}">Aktifkan</a></span>
+                  @endif
+                  <h3 class="timeline-header no-border"><a href="#">Guru melihat profile guru lainnya</a></h3>
                 </div>
               </div>
+              <!-- <div>
+                <i class="fas fa-cog bg-purple"></i>
+                <div class="timeline-item">
+                  @if($row->siswa_update_data == true)
+                  <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/siswa-update-data/'.$row->id)}}">Nonaktifkan</a></span>
+                  @elseif($row->siswa_update_data == false)
+                  <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/siswa-update-data/'.$row->id)}}">Aktifkan</a></span>
+                  @endif
+                  <h3 class="timeline-header no-border"><a href="#">Simpan Log Masuk Admin</a></h3>
+                </div>
+              </div>
+              <div>
+                <i class="fas fa-cog bg-purple"></i>
+                <div class="timeline-item">
+                  @if($row->siswa_update_data == true)
+                  <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/siswa-update-data/'.$row->id)}}">Nonaktifkan</a></span>
+                  @elseif($row->siswa_update_data == false)
+                  <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/siswa-update-data/'.$row->id)}}">Aktifkan</a></span>
+                  @endif
+                  <h3 class="timeline-header no-border"><a href="#">Simpan Log Masuk Guru</a></h3>
+                </div>
+              </div>
+              <div>
+                <i class="fas fa-cog bg-purple"></i>
+                <div class="timeline-item">
+                  @if($row->siswa_update_data == true)
+                  <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/siswa-update-data/'.$row->id)}}">Nonaktifkan</a></span>
+                  @elseif($row->siswa_update_data == false)
+                  <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/siswa-update-data/'.$row->id)}}">Aktifkan</a></span>
+                  @endif
+                  <h3 class="timeline-header no-border"><a href="#">Simpan Log Masuk Siswa</a></h3>
+                </div>
+              </div>
+              <div>
+                <i class="fas fa-database bg-purple"></i>
+                <div class="timeline-item">
+                  @if($row->siswa_update_data == true)
+                  <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/siswa-update-data/'.$row->id)}}">Nonaktifkan</a></span>
+                  @elseif($row->siswa_update_data == false)
+                  <span class="time"><a class="btn btn-link btn-xs" href="{{url('pengaturan/siswa-update-data/'.$row->id)}}">Aktifkan</a></span>
+                  @endif
+                  <h3 class="timeline-header no-border"><a href="#">Backup Database</a></h3>
+                </div>
+              </div> -->
               @endforeach
             </div>
           </div>
