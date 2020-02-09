@@ -17,9 +17,9 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
-            <div class="card card-primary">
+            <div class="card  card-primary card-outline">
               <div class="card-header">
-                <h3 class="card-title">Form Tambah Wali Kelas</h3>
+                <h3 class="card-title">Tambah Wali Kelas</h3>
               </div>
               <form role="form" action="{{url('wali-kelas/store')}}" method="post">
                   {{csrf_field()}}

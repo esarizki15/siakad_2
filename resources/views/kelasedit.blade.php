@@ -17,10 +17,9 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
-           
-            <div class="card card-primary">
+            <div class="card card-primary card-outline">
               <div class="card-header">
-                <h3 class="card-title">Form {{$title}}</h3>
+                <h3 class="card-title">{{$title}}</h3>
               </div>
               <form role="form" action="{{url('kelas/update/'.$kelas->kelas_id)}}" method="post">
                   {{csrf_field()}}
@@ -31,25 +30,25 @@
                         <input value="{{$kelas->nama_kelas}}" style="text-transform:uppercase;" required type="text" name="nama_kelas" class="form-control" id="exampleInputEmail1" placeholder="Nama Kelas">
                      </div>
                      <div class="form-group col-md-4">
-                        <label for="exampleInputPassword1">Tahun Masuk</label>
+                        <label>Tahun Masuk</label>
                         <select name="tahun" class="form-control">
-                           <option>Pilih Tahun</option>
+                           <option value="{{$kelas->tahun_ajaran_id}}">{{@$kelas->tahun->tahun_ajaran}}</option>
+                           @foreach($tahun_ajaran as $row)
+                           <option value="{{$row->tahun_ajaran_id}}">{{$row->tahun_ajaran}}</option>
+                           @endforeach
+                        </select>
+                     </div>
+                     <div class="form-group col-md-4">
+                        <label>Pilih Jurusan</label>
+                        <select name="id_jurusan" class="form-control">
+                           <option value="{{$kelas->jurusan_id}}">{{@$kelas->jurusan->nama_jurusan}}</option>
                            @foreach($jurusan as $row)
                            <option value="{{$row->jurusan_id}}">{{$row->nama_jurusan}}</option>
                            @endforeach
                         </select>
                      </div>
                      <div class="form-group col-md-4">
-                        <label for="exampleInputPassword1">Pilih Jurusan</label>
-                        <select name="id_jurusan" class="form-control">
-                           <option value="{{$kelas->jurusan_id}}">Pilih Jurusan</option>
-                           @foreach($jurusan as $row)
-                           <option value="{{$row->jurusan_id}}">{{$row->singkatan}} | {{$row->nama_jurusan}}</option>
-                           @endforeach
-                        </select>
-                     </div>
-                     <div class="form-group col-md-4">
-                        <label for="exampleInputPassword1">Status</label><br>
+                        <label>Status</label><br>
                         <div class="custom-control custom-radio">
                           <input @if($kelas->status=="1") {{"checked"}} @endif class="custom-control-input" type="radio" name="status" value="1" id="customRadio2" name="customRadio">
                           <label for="customRadio2" class="custom-control-label">Aktif</label>

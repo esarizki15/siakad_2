@@ -22,8 +22,8 @@
                      <i class="fa fa-info-circle"></i> <strong>{{ \Illuminate\Support\Facades\Session::get('alert-success') }}</strong>
                   </div>
                @endif
-               <div class="card">
-                  <div class="card-header bg-primary">
+               <div class="card card-primary card-outline">
+                  <div class="card-header main">
                      <h3 class="card-title">
                        Tulis Kalender Akademik
                      </h3>

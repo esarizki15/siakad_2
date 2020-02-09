@@ -17,17 +17,15 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
-               <div class="card">
-                  <div class="card-header main bg-primary">
+               <div class="card card-primary card-outline">
+                  <div class="card-header main">
                      <h3 class="card-title">
-                        <a href="{{url('/tahun-ajaran/add')}}" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
-                        <a href="" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-download"></i> Export</a>
-                        <a href="" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-upload"></i> Import</a>
-                        <a href="" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-trash"></i> Recovery</a>
+                        <a href="{{url('/tahun-ajaran/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Input Data</a>
+                        <a href="" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fa fa-trash"></i> Terhapus</a>
                      </h3>
                   </div>
                   <div class="card-body">
-                  <table id="example1" class="table table-striped table-sm">
+                  <table id="example1" class="table table-striped table-bordered table-sm">
                      <thead>
                      <tr>
                         <th class="text-center">No</th>
@@ -41,8 +39,8 @@
                      @foreach($tahun_ajaran as $row)
                         <tr>
                            <td>{{$no++}}</td>
-                           <td>{{$row->tahun_ajaran}}</td>
-                           <td>
+                           <td class="text-center">{{$row->tahun_ajaran}}</td>
+                           <td class="text-center">
                               @if($row->active==true)
                               <span class="badge badge-primary">{{"Aktif"}}</span>
                               @else

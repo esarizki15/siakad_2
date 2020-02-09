@@ -17,15 +17,15 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
-               <div class="card">
-                  <div class="card-header bg-primary">
+               <div class="card card-primary card-outline">
+                  <div class="card-header">
                      <h3 class="card-title">
-                       Tulis Kalender Akademik
+                       Input Kalender Akademik
                      </h3>
                   </div>
                   <div class="card-body">
                   <div class="col-md-12">
-                  <form action="{{url('kalender-akademik/save')}}" type="post">
+                  <form action="{{url('kalender-akademik/save')}}" method="post">
                   {{csrf_field()}}
                     <div class="form-group">
                         <input type="text" name="judul" id="" class="form-control" placeholder="Judul">

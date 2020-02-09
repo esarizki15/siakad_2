@@ -17,12 +17,10 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
-           
-            <div class="card card-primary">
+            <div class="card card-primary card-outline">
               <div class="card-header">
-                <h3 class="card-title"><i class="fa fa-edit"></i> Perbaharui Data Siswa</h3>
+                <h3 class="card-title">Perbaharui Data Siswa</h3>
               </div>
-              
               <form role="form" action="{{url('siswa/update/'.$siswa->siswa_id)}}" method="post">
                   {{method_field('PUT')}}
                   {{csrf_field()}}
@@ -46,7 +44,7 @@
                      <div class="form-group col-md-6">
                         <label for="exampleInputPassword1">Kelas</label>
                         <select required name="id_kelas" class="form-control kelas">
-                           <option value="{{$siswa->kelas_id}}">Kelas</option>
+                           <option value="{{$siswa->kelas_id}}">{{@$siswa->kelas->nama_kelas}}</option>
                            @foreach($kelas as $row)
                            <option value="{{$row->kelas_id}}">{{$row->nama_kelas}}</option>
                            @endforeach

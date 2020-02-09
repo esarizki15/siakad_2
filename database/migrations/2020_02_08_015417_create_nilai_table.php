@@ -15,6 +15,13 @@ class CreateNilaiTable extends Migration
     {
         Schema::create('nilai', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('mata_pelajaran_id');
+            $table->integer('siswa_id');
+            $table->integer('tahun_ajaran_id');
+            $table->integer('nilai');
+            $table->char('huruf');
+            $table->string('huruf_mutu');
+            $table->string('deskripsi');
             $table->timestamps();
         });
     }

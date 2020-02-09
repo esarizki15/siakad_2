@@ -19,7 +19,7 @@
          <div class="row">
             <div class="col-md-12">
            
-            <div class="card card-primary">
+            <div class="card card-primary card-outline card-outline card-outline">
               <div class="card-header">
                 <h3 class="card-title"><i class="fa fa-edit"></i> {{$title}}</h3>
               </div>
@@ -73,7 +73,7 @@
                   </div>
                   <div class="col-md-4">
                   <label>FOTO PROFILE</label>
-                  <div class="card card-primary card-outline">
+                  <div class="card card-primary card-outline card-outline card-outline card-outline">
               <div class="card-body box-profile">
               
                 <div class="text-center">

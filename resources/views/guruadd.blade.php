@@ -18,9 +18,9 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
-            <div class="card card-primary">
+            <div class="card card-primary card-outline">
               <div class="card-header">
-                <h3 class="card-title"><i class="fa fa-plus-circle"></i> {{$title}}</h3>
+                <h3 class="card-title"><i class="fas fa-graduation-cap"></i> {{$title}}</h3>
               </div>
               <form role="form" action="{{url('guru/store')}}" method="post" enctype="multipart/form-data">
                   {{csrf_field()}}
@@ -59,7 +59,7 @@
                      <div class="form-group col-md-6">
                         <label for="exampleInputPassword1">Status</label><br>
                         <div class="custom-control custom-radio">
-                          <input class="custom-control-input" type="radio" name="status" value="aktif" id="customRadio2" name="customRadio">
+                          <input class="custom-control-input" checked type="radio" name="status" value="aktif" id="customRadio2" name="customRadio">
                           <label for="customRadio2" class="custom-control-label">Aktif</label>
                         </div>
                         <div class="custom-control custom-radio">

@@ -17,10 +17,10 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
-               <div class="card">
-                  <div class="card-header main bg-primary">
+               <div class="card card-primary card-outline">
+                  <div class="card-header main">
                      <h3 class="card-title">
-                        <a href="{{url('/wali-kelas/add')}}" class="btn btn-info bg-gradient-primary bg-gradient-dange btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
+                        <a href="{{url('/wali-kelas/add')}}" class="btn btn-info bg-gradient-primary bg-gradient-dange btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah Wali Kelas</a>
                      </h3>
                   </div>
                   <div class="card-body">

@@ -50,6 +50,7 @@ class DataKelas extends Controller
         $kelas->nama_kelas = $request->nama_kelas;
         $kelas->jurusan_id = $request->id_jurusan;
         $kelas->tahun_ajaran_id = $request->tahun;
+        $kelas->status = $request->status;
         $kelas->save();
         return redirect('kelas')->with('alert-success','Data Kelas berhasil ditambahkan');
     }
@@ -76,7 +77,8 @@ class DataKelas extends Controller
         $title = "Perbaharui Data Kelas";
         $kelas = Kelas::find($id);
         $jurusan = Jurusan::all();
-        return view('kelasedit', compact('title','kelas','jurusan'));
+        $tahun_ajaran = Tahunajaran::orderBy('tahun_ajaran_id','DESC')->get();
+        return view('kelasedit', compact('title','kelas','jurusan','tahun_ajaran'));
     }
 
     /**
@@ -91,6 +93,8 @@ class DataKelas extends Controller
         $kelas = Kelas::find($id);
         $kelas->nama_kelas = $request->nama_kelas;
         $kelas->jurusan_id = $request->id_jurusan;
+        $kelas->tahun_ajaran_id = $request->tahun;
+        $kelas->status = $request->status;
         $kelas->save();
         return redirect('kelas')->with('alert-success', 'Data kelas berhasil diperbaharui');
     }

@@ -18,9 +18,9 @@
          <div class="row">
             <div class="col-md-12">
             
-            <div class="card card-primary">
+            <div class="card card-primary card-outline">
               <div class="card-header">
-                <h3 class="card-title">Form {{$title}}</h3>
+                <h3 class="card-title">{{$title}}</h3>
               </div>
               <form role="form" action="{{url('jurusan/update/'.$jurusan->jurusan_id)}}" method="post">
                   {{csrf_field()}}

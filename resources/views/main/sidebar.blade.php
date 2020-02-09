@@ -11,6 +11,15 @@
   <link rel="stylesheet" href="{{url('plugins/summernote/summernote-bs4.css')}}">
   <link rel="stylesheet" href="{{url('plugins/toastr/toastr.min.css')}}">
   <style>
+
+    .btn{
+      border-radius: 0px;
+    }
+
+    .form-control{
+      border-radius: 0px;
+      font-size: 11pt;
+    }
     tr{
       padding: 5px;
     }
@@ -34,12 +43,7 @@
     .main{
       padding: 7px;
     }
-    .card{
-      border-radius:0px;
-    }
-    .card-header{
-      border-radius:0px;
-    }
+
     /* .btn{
       border-radius: 0px;
     } */

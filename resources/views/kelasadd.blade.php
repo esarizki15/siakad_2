@@ -20,7 +20,7 @@
            
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Form {{$title}}</h3>
+                <h3 class="card-title">{{$title}}</h3>
               </div>
               <form role="form" action="{{url('kelas/store')}}" method="post">
                   {{csrf_field()}}
@@ -32,7 +32,7 @@
                      <div class="form-group col-md-4">
                         <label for="exampleInputPassword1">Tahun Masuk</label>
                         <select name="tahun" class="form-control">
-                           <option>Pilih Jurusan</option>
+                           <option>Tahun Masuk</option>
                            @foreach($tahun_ajaran as $row)
                            <option value="{{$row->tahun_ajaran_id}}">{{$row->tahun_ajaran}}</option>
                            @endforeach
@@ -46,6 +46,17 @@
                            <option value="{{$row->jurusan_id}}">{{$row->nama_jurusan}}</option>
                            @endforeach
                         </select>
+                     </div>
+                     <div class="form-group col-md-4">
+                        <label>Status</label><br>
+                        <div class="custom-control custom-radio">
+                          <input checked class="custom-control-input" type="radio" name="status" value="1" id="customRadio2" name="customRadio">
+                          <label for="customRadio2" class="custom-control-label">Aktif</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input class="custom-control-input" type="radio" name="status" value="0" id="customRadio1" name="customRadio">
+                          <label for="customRadio1" class="custom-control-label">Tidak Aktif</label>
+                        </div>
                      </div>
                   </div>
                 <div class="card-footer">

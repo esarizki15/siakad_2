@@ -16,8 +16,8 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
-               <div class="card">
-                  <div class="card-header main bg-primary">
+               <div class="card card-primary card-outline">
+                  <div class="card-header main">
                      <h3 class="card-title">
                         <i clas="far fa-calendar"></i> Jadwal Pelajaran
                      </h3>
@@ -97,10 +97,10 @@
                         </div>
                         <div class="col-md-9">
                            <div class="row">
-                           <div class="form-group col-md-6">
+                           <div class="form-group col-md-3">
                            <label>Tahun Ajaran</label>
                               <div class="input-group">
-                              <select disabled name="kelas" class="form-control">
+                              <select name="kelas" class="form-control">
                                  <option value="Normatif">Pilih Kelas</option>
                                  @foreach($kelas as $row)
                                  <option value="Produktif">{{$row->nama_kelas}}</option>
@@ -109,7 +109,7 @@
                               </div>
                            </div>
                            
-                           <div class="form-group col-md-6">
+                           <div class="form-group col-md-3">
                            <label>Pilih Kelas</label>
                               <div class="input-group">
                               <select name="kelas" class="form-control">

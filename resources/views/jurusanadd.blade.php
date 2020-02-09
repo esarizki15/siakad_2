@@ -26,9 +26,9 @@
                                 </ul>
                             </div>
                             @endif
-            <div class="card card-primary">
+            <div class="card card-primary card-outline">
               <div class="card-header">
-                <h3 class="card-title"><i class="fa fa-plus-circle"></i> {{$title}}</h3>
+                <h3 class="card-title"> {{$title}}</h3>
               </div>
               <form role="form" action="{{url('jurusan/store/')}}" method="post">
                   {{csrf_field()}}

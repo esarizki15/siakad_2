@@ -17,11 +17,10 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
-               <div class="card">
-                  <div class="card-header main bg-primary">
+               <div class="card card-primary card-outline">
+                  <div class="card-header main">
                      <h3 class="card-title">
-                        <a href="{{url('/kalender-akademik/add')}}" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fas fa-pencil"></i> Input Data</a>
-                        <a href="{{url('/guru/recovery/')}}" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-trash"></i> Recovery</a>
+                        <a href="{{url('/kalender-akademik/add')}}" class="btn btn-primary bg-gradient-primary btn-sm pull-right"><i class="fas fa-plus-circle"></i> Input Data</a>
                      </h3>
                   </div>
                   <div class="card-body">
