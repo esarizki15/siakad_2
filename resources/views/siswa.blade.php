@@ -20,10 +20,10 @@
                <div class="card">
                   <div class="card-header main bg-primary">
                      <h3 class="card-title">
-                        <a href="{{url('/siswa/add')}}" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-plus-circle"></i> Tambah Siswa</a>
-                        <a href="" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-download"></i> Export</a>
-                        <a href="" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-upload"></i> Import</a>
-                        <a href="{{url('/guru/recovery/')}}" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-trash"></i> Data Terhapus</a>
+                        <a href="{{url('/siswa/add')}}" class="btn btn-info bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah Siswa</a>
+                        <a href="" class="btn btn-info bg-gradient-primary btn-sm pull-right"><i class="fa fa-download"></i> Export</a>
+                        <a href="" class="btn btn-info bg-gradient-primary btn-sm pull-right"><i class="fa fa-upload"></i> Import</a>
+                        <a href="{{url('/guru/recovery/')}}" class="btn btn-info bg-gradient-primary btn-sm pull-right"><i class="fa fa-trash"></i> Data Terhapus</a>
                      </h3>
                   </div>
                   <div class="card-body">

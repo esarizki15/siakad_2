@@ -21,7 +21,7 @@ class DataSiswa extends Controller
     public function index()
     {
         $title = "Data Siswa";
-        $siswa = Siswa::all();
+        $siswa = Siswa::join('kelas','kelas.kelas_id','=','siswa.kelas_id')->where('kelas.status',1)->get();
         $jumlah = Siswa::all()->count();
         return view('siswa', compact('title', 'siswa'));
     }

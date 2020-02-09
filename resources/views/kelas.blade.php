@@ -20,8 +20,8 @@
          <div class="card">
             <div class="card-header main bg-primary">
                <h3 class="card-title">
-                  <a href="{{url('/kelas/add')}}" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
-                  <a href="" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-trash"></i> Recovery</a>
+                  <a href="{{url('/kelas/add')}}" class="btn btn-info bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
+                  <a href="" class="btn btn-info bg-gradient-primary btn-sm pull-right"><i class="fa fa-trash"></i> Recovery</a>
                </h3>
             </div>
             <div class="card-body">

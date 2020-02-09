@@ -16,43 +16,41 @@
    <section class="content">
       <div class="container-fluid">
          <div class="row">
-         <div class="col-md-12">
-         <div class="card">
-            <div class="card-header main bg-primary">
-               <h3 class="card-title">
-                  <a href="{{url('/jurusan/add')}}" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-plus-circle"></i> Tambah Jurusan</a>
-               </h3>
+            <div class="col-md-12">
+               <div class="card">
+                  <div class="card-header main bg-primary">
+                     <h3 class="card-title">
+                        <a href="{{url('/jurusan/add')}}" class="btn btn-info bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah Jurusan</a>
+                     </h3>
+                  </div>
+                  <div class="card-body">
+                     <table id="example1" class="table table-bordered table-striped table-hover table-sm">
+                        <thead>
+                        <tr>
+                           <th class="text-center">No</th>
+                           <th>Kode Jurusan</th>
+                           <th>Nama Jursuan</th>
+                           <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                           <?php $no=1; ?>
+                           @foreach($jurusan as $row)
+                           <tr>
+                              <td><?php echo $no++; ?></td>
+                              <td>{{$row->singkatan}}</td>
+                              <td>{{$row->nama_jurusan}}</td>
+                              <td align="center" width="200">
+                                 <a href="{{url('/jurusan/edit/'.$row->jurusan_id)}}" class="btn btn-primary bg-gradient-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                                 <a href="{{url('/jurusan/delete/'.$row->jurusan_id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
+                              </td>
+                           </tr>
+                           @endforeach               
+                        </tfoot>
+                     </table>
+                  </div>
+               </div>
             </div>
-            <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped table-hover table-sm">
-                <thead>
-                <tr>
-                  <th class="text-center">No</th>
-                  <th>Kode Jurusan</th>
-                  <th>Nama Jursuan</th>
-                  <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                  <?php $no=1; ?>
-                  @foreach($jurusan as $row)
-                  <tr>
-                     <td><?php echo $no++; ?></td>
-                     <td>{{$row->singkatan}}</td>
-                     <td>{{$row->nama_jurusan}}</td>
-                     <td align="center" width="200">
-                        <a href="{{url('/jurusan/edit/'.$row->jurusan_id)}}" class="btn btn-primary bg-gradient-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                        <a href="{{url('/jurusan/delete/'.$row->jurusan_id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
-                     </td>
-                  </tr>
-                  @endforeach               
-                </tfoot>
-              </table>
-            </div>
-            <!-- /.card-body -->
-          </div>
-          <!-- /.card -->
-          </div>
          </div>
       </div>
    </section>

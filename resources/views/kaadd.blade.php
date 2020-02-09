@@ -17,11 +17,6 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
-               @if(Session::has('alert-success'))
-                  <div class="alert alert-success">
-                     <i class="fa fa-info-circle"></i> <strong>{{ \Illuminate\Support\Facades\Session::get('alert-success') }}</strong>
-                  </div>
-               @endif
                <div class="card">
                   <div class="card-header bg-primary">
                      <h3 class="card-title">

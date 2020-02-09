@@ -20,11 +20,11 @@
                <div class="card">
                   <div class="card-header main bg-primary">
                      <h3 class="card-title">
-                        <a href="{{url('/wali-kelas/add')}}" class="btn btn-primary bg-gradient-primary bg-gradient-dange btn-xs pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
+                        <a href="{{url('/wali-kelas/add')}}" class="btn btn-info bg-gradient-primary bg-gradient-dange btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah</a>
                      </h3>
                   </div>
                   <div class="card-body">
-                  <table id="example1" class="table table-bordered table-striped table-sm">
+                  <table id="example1" class="table table-bordered table-hover table-striped table-sm">
                      <thead>
                      <tr>
                         <th class="text-center">No</th>

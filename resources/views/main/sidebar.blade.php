@@ -102,7 +102,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="{{url('/dashboard')}}" class="nav-link bg-danger">
+            <a href="{{url('/dashboard')}}" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Dashboard
@@ -250,8 +250,8 @@
     $("#example1").DataTable();
     $('#example2').DataTable({
       "paging": true,
-      "lengthChange": false,
-      "searching": false,
+      "lengthChange": true,
+      "searching": true,
       "ordering": true,
       "info": true,
       "autoWidth": true,
@@ -284,8 +284,31 @@
         url : '<?php echo url('guru/detail/') ?>/' + id,
         type : 'GET',
         dataType : 'JSON',
-        success:function(response){
-          console.log(response.guru_id);
+        success:function(data){
+          var html = '';
+          var i;
+          for(i=0; i<data.length; i++){
+            html += '<div class="col-md">'+
+                      '<div class="">'+
+                        '<div class="card-body box-profile">'+
+                          '<div class="text-center">'+
+                            '<img class="profile-user-img img-fluid img-circle">'+
+                          '</div>'+
+                          '<h3 class="profile-username text-center">'+'Nina Mcintire'+'</h3>'+
+                          '<p class="text-muted text-center">'+'Software Engineer'+'</p>'+
+                          '<ul class="list-group list-group-unbordered mb-3">'+
+                            '<li class="list-group-item">'+'NIK'+'<a class="float-right">'+'1,322'+'</a>'+'</li>'+
+                            '<li class="list-group-item">'+'NUPTK'+'<a class="float-right">'+'1,322'+'</a>'+'</li>'+
+                            '<li class="list-group-item">'+'Alamat'+'<a class="float-right">'+'1,322'+'</a>'+'</li>'+
+                            '<li class="list-group-item">'+'Tempat, Tanggal Lahir'+'<a class="float-right">'+'1,322'+'</a>'+'</li>'+
+                            '<li class="list-group-item">'+'Jenis Kelamin'+'<a class="float-right">'+'1,322'+'</a>'+'</li>'+
+                            '<li class="list-group-item">'+'Agama'+'<a class="float-right">'+'1,322'+'</a></li>'+
+                          '</ul>'+
+                        '</div>'+
+                      '</div>'+
+                    '</div>'
+          }
+          $('#profileguru').html(html);
         },
         error:function(response){
           console.log(response);
@@ -295,7 +318,8 @@
 
     <?php if(Session::has('alert-success')){ ?>       
       toastr.success('{{ \Illuminate\Support\Facades\Session::get('alert-success') }}');
-
+    <?php }else if(Session::has('alert-danger')){ ?>
+      toastr.error('{{ \Illuminate\Support\Facades\Session::get('alert-danger') }}');
     <?php } ?>
   });
   

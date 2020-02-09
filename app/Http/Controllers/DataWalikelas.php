@@ -46,11 +46,20 @@ class DataWalikelas extends Controller
      */
     public function store(Request $request)
     {
-        $walikelas = new Walikelas();
-        $walikelas->kelas_id = $request->kelas_id;
-        $walikelas->guru_id  = $request->guru_id;
-        $walikelas->save();
-        return redirect('wali-kelas')->with('alert-success','Berhasil menambah data wali kelas');
+        $id = $request->kelas_id;
+        $kelas = Walikelas::where('kelas_id',$id)->count();
+        if($kelas==0){
+            $walikelas = new Walikelas();
+            $walikelas->kelas_id = $request->kelas_id;
+            $walikelas->guru_id  = $request->guru_id;
+            $walikelas->save();
+            return redirect('wali-kelas')->with('alert-success','Berhasil menambah data wali kelas');
+
+        }else{
+
+            return redirect('wali-kelas')->with('alert-danger','Tidak dapat menambahkan data kelas yang sama, silahkan pilih kelas lain');
+
+        }
     }
 
     /**

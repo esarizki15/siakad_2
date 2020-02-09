@@ -25,16 +25,25 @@
               <form role="form" action="{{url('kelas/store')}}" method="post">
                   {{csrf_field()}}
                   <div class="card-body row">
-                     <div class="form-group col-md-6">
+                     <div class="form-group col-md-4">
                         <label for="exampleInputEmail1">Nama Kelas</label>
                         <input style="text-transform:uppercase;" required type="text" name="nama_kelas" class="form-control" id="exampleInputEmail1" placeholder="Nama Kelas">
                      </div>
-                     <div class="form-group col-md-6">
+                     <div class="form-group col-md-4">
+                        <label for="exampleInputPassword1">Tahun Masuk</label>
+                        <select name="tahun" class="form-control">
+                           <option>Pilih Jurusan</option>
+                           @foreach($tahun_ajaran as $row)
+                           <option value="{{$row->tahun_ajaran_id}}">{{$row->tahun_ajaran}}</option>
+                           @endforeach
+                        </select>
+                     </div>
+                     <div class="form-group col-md-4">
                         <label for="exampleInputPassword1">Pilih Jurusan</label>
                         <select name="id_jurusan" class="form-control">
                            <option>Pilih Jurusan</option>
                            @foreach($jurusan as $row)
-                           <option value="{{$row->jurusan_id}}">{{$row->singkatan}} | {{$row->nama_jurusan}}</option>
+                           <option value="{{$row->jurusan_id}}">{{$row->nama_jurusan}}</option>
                            @endforeach
                         </select>
                      </div>

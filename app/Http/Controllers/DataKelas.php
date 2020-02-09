@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Kelas;
 use App\Jurusan;
+use App\Tahunajaran;
 
 class DataKelas extends Controller
 {
@@ -20,7 +21,7 @@ class DataKelas extends Controller
     public function index()
     {
         $title = "Data Kelas";
-        $kelas = Kelas::orderBy('nama_kelas','asc')->get();
+        $kelas = Kelas::Where('status',1)->orderBy('tahun_ajaran_id')->orderBy('nama_kelas','asc')->get();
         return view('kelas', compact('title','kelas'));
     }
 
@@ -33,7 +34,8 @@ class DataKelas extends Controller
     {
         $title = "Tambah Data Kelas";
         $jurusan = Jurusan::all();
-        return view('kelasadd',compact('title','jurusan'));
+        $tahun_ajaran = Tahunajaran::all();
+        return view('kelasadd',compact('title','jurusan','tahun_ajaran'));
     }
 
     /**
@@ -47,6 +49,7 @@ class DataKelas extends Controller
         $kelas = new Kelas();
         $kelas->nama_kelas = $request->nama_kelas;
         $kelas->jurusan_id = $request->id_jurusan;
+        $kelas->tahun_ajaran_id = $request->tahun;
         $kelas->save();
         return redirect('kelas')->with('alert-success','Data Kelas berhasil ditambahkan');
     }

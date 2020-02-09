@@ -20,14 +20,14 @@
                <div class="card">
                   <div class="card-header main bg-primary">
                      <h3 class="card-title">
-                        <a href="{{url('/guru/add')}}" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-plus-circle"></i> Input Data</a>
-                        <a href="" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-download"></i> Export Data</a>
-                        <a href="" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-upload"></i> Import Data</a>
-                        <a href="{{url('/guru/recovery/')}}" class="btn btn-primary bg-gradient-primary btn-xs pull-right"><i class="fa fa-trash"></i> Data Terhapus</a>
+                        <a href="{{url('/guru/add')}}" class="btn btn-info bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Input Data</a>
+                        <a href="" class="btn btn-info bg-gradient-primary btn-sm pull-right"><i class="fa fa-download"></i> Export Data</a>
+                        <a href="" class="btn btn-info bg-gradient-primary btn-sm pull-right"><i class="fa fa-upload"></i> Import Data</a>
+                        <a href="{{url('/guru/recovery/')}}" class="btn btn-info bg-gradient-primary btn-sm pull-right"><i class="fa fa-trash"></i> Data Terhapus</a>
                      </h3>
                   </div>
                   <div class="card-body">
-                  <table id="example1" class="table table-bordered table-striped table-sm">
+                  <table id="example1" class="table table-hover table-bordered table-striped table-sm">
                      <thead>
                      <tr>
                         <th class="text-center">No</th>
@@ -82,15 +82,10 @@
               </button>
             </div>
             <div class="modal-body">
-              <p>One fine body&hellip;</p>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+               <div id="profileguru"></div>
+               
             </div>
           </div>
-          <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
       </div>
 @endsection
