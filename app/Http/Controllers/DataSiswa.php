@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\RequestSiswa;
+use App\Exports\SiswaExport;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Siswa;
 use App\Kelas;
 
@@ -21,9 +23,10 @@ class DataSiswa extends Controller
     public function index()
     {
         $title = "Data Siswa";
+        $kelas = Kelas::all();
         $siswa = Siswa::join('kelas','kelas.kelas_id','=','siswa.kelas_id')->where('kelas.status',1)->get();
         $jumlah = Siswa::all()->count();
-        return view('siswa', compact('title', 'siswa'));
+        return view('siswa', compact('title', 'siswa','kelas'));
     }
 
     /**
@@ -47,7 +50,7 @@ class DataSiswa extends Controller
 
     
 
-    public function store(RequestSiswa $request)
+    public function store(Request $request)
     {
         
             $data = new Siswa();
@@ -120,5 +123,10 @@ class DataSiswa extends Controller
     {
         Siswa::find($id)->delete();
         return redirect('siswa')->with('alert-success','Berhasil menghapus data siswa');
+    }
+
+    public function export_data()
+    {
+        return Excel::download(new SiswaExport, 'Data-Siswa'.time().'.xlsx');
     }
 }

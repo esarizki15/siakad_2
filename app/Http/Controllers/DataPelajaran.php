@@ -70,7 +70,7 @@ class DataPelajaran extends Controller
     public function edit($id)
     {
         $title = "Perbaharui data mata pelajaran";
-        $mapel = Mata_pelajaran::find($id)->first();
+        $mapel = Mata_pelajaran::find($id);
         return view('mapeledit', compact('title','mapel'));
     }
 

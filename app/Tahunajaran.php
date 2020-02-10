@@ -12,4 +12,8 @@ class Tahunajaran extends Model
     function kelas(){
         return $this->hasOne('App\Tahunajaran','tahun_ajaran_id');
     }
+
+    function jadwal_pelajaran(){
+        return $this->hasOne('App\Jadwal_pelajaran','tahun_ajaran_id');
+    }
 }

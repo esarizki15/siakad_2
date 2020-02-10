@@ -59,7 +59,7 @@
                               <select name="guru" class="form-control">
                                  <option>Pilih Guru</option>
                                  @foreach($guru as $row)
-                                 <option value="Produktif">{{$row->nama_lengkap}}</option>
+                                 <option value="{{$row->guru_id}}">{{$row->nama_lengkap}}</option>
                                  @endforeach
                               </select>
                            </div>
@@ -125,9 +125,11 @@
                               </div>
                            </div>
                            </div>
-                           <table class="table table-bordered table-striped table-sm">
+                           <table id="example2" class="table table-bordered table-striped table-sm">
                               <thead>
                               <tr>
+                                 <th>Hari</th>
+                                 <th>Kelas</th>
                                  <th>Nama Pelajaran</th>
                                  <th>Nama Guru</th>
                                  <th>Jam Mulai</th>
@@ -136,7 +138,17 @@
                               </thead>
                               <tbody>
                               <?php $no = 1; ?>
-                              
+                              @foreach($jadwal_pelajaran as $row)
+                                 <tr>
+                                    <td>{{@$row->hari->hari}}</td>
+                                    <td>{{@$row->kelas->nama_kelas}}</td>
+                                    <td>{{@$row->mata_pelajaran->nama_mapel}}</td>
+                                    <td>{{@$row->guru->nama_lengkap}}</td>
+                                    <td>{{$row->jam_mulai}}</td>
+                                    <td>{{$row->jam_selesai}}</td>
+                                    <td><a href="" class="btn btn-danger btn-xs hapus"><i class="fa fa-trash"></i></a></td>
+                                 </tr>
+                              @endforeach
                               </tfoot>
                            </table>
                      </div>

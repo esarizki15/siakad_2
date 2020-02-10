@@ -35,7 +35,7 @@ Route::post('/siswa/store', 'DataSiswa@store');
 Route::get('/siswa/update/{id}','DataSiswa@edit');
 Route::put('/siswa/update/{id}', 'DataSiswa@update');
 Route::get('/siswa/delete/{id}', 'DataSiswa@destroy');
-
+Route::post('/siswa/export/','DataSiswa@export_data');
 
 //Jenjang Pendidikan
 Route::get('jenjang-pendidikan', 'Jenjangpendidikan@index');

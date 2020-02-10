@@ -25,11 +25,10 @@
                </h3>
             </div>
             <div class="card-body">
-               <table id="example1" class="table table-hover table-sm">
+               <table id="example1" class="table table-bordered table-hover table-sm">
                   <thead>
                      <tr>
                         <th class="text-center">No</th>
-                        <th>Kode</th>
                         <th>Mata Pelajaran</th>
                         <th>Jenis Mata Pelajaran</th>
                         <th></th>
@@ -40,7 +39,6 @@
                   @foreach($mapel as $row)
                      <tr>
                         <td class="text-center">{{$no++}}</td>
-                        <td>{{$row->kode_mapel}}</td>
                         <td>{{$row->nama_mapel}}</td>
                         <td>{{$row->jenis_mapel}}</td>                     
                         <td class="text-center">

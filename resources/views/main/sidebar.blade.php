@@ -23,6 +23,7 @@
     tr{
       padding: 5px;
     }
+
     td{
       padding: 5px;
     }
@@ -48,23 +49,23 @@
       border-radius: 0px;
     } */
     ::-webkit-scrollbar {
-      width: 8px;
+      width: 5px;
       border-radius: 8px;
     }
 
     /* Track */
     ::-webkit-scrollbar-track {
-      background: #292b2c;
+      background: white;
     }
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-      background: #888;
+      background: blue;
     }
 
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-      background: #555;
+      background: blue;
     }
   </style>
 </head>

@@ -16,4 +16,8 @@ class Guru extends Model
     function walikelas(){
         return $this->hasOne('App\Walikelas','guru_id');
     }
+
+    function jadwal_pelajaran(){
+        return $this->hasOne('App\Jadwal_pelajaran','guru_id');
+    }
 }

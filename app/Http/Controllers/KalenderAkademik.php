@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Kalender_akademik;
+use Illuminate\Support\Facades\Auth;
 
 class KalenderAkademik extends Controller
 {
@@ -42,11 +43,12 @@ class KalenderAkademik extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user()->name;
         $data = new Kalender_akademik();
         $data->title = $request->judul;
         $data->content = $request->isi;
         $data->tgl = $request->tanggal;
-        $data->created_by = "miimin";
+        $data->created_by = $user;
         $data->save();
         return redirect('kalender-akademik')->with('alert-success','Berhasil menyimpan kalender akademik');
     }
@@ -84,12 +86,12 @@ class KalenderAkademik extends Controller
      */
     public function update(Request $request, $id)
     {   
-
+        $user = Auth::user()->name;
         $data = Kalender_akademik::find($id);
         $data->title = $request->judul;
         $data->content = $request->isi;
         $data->tgl = $request->tanggal;
-        $data->created_by = "Mimin Siakad";
+        $data->created_by = $user;
         $data->save();
         return redirect('kalender-akademik')->with('alert-success','Berhasil menyimpan kalender akademik');
     }

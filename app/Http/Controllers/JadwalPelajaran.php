@@ -29,7 +29,8 @@ class JadwalPelajaran extends Controller
         $guru = Guru::all();
         $hari = Hari::all();
         $tahun_ajaran = Tahunajaran::all();
-        return view('jadwalpel',compact('title','tahun_ajaran','hari','guru','mata_pelajaran','kelas'));
+        $jadwal_pelajaran = Jadwal_pelajaran::orderBy('hari_id','ASC')->get();
+        return view('jadwalpel',compact('title','jadwal_pelajaran','tahun_ajaran','hari','guru','mata_pelajaran','kelas'));
     }
 
     /**
@@ -37,16 +38,17 @@ class JadwalPelajaran extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        $title = "Buat Jadwal Pelajaran";
-        $kelas = Kelas::where('status',true)->get();
-        $mata_pelajaran = Mata_pelajaran::all();
-        $guru = Guru::all();
-        $hari = Hari::all();
-        $tahun_ajaran = Tahunajaran::all();
-        return view('jadwalpeladd',compact('title','tahun_ajaran','hari','guru','mata_pelajaran','kelas'));
-    }
+    // public function create()
+    // {
+    //     $title = "Buat Jadwal Pelajaran";
+    //     $kelas = Kelas::where('status',true)->get();
+    //     $mata_pelajaran = Mata_pelajaran::all();
+    //     $guru = Guru::all();
+    //     $hari = Hari::all();
+    //     $tahun_ajaran = Tahunajaran::all();
+        
+    //     return view('jadwalpeladd',compact('title','jadwal_pelajaran','tahun_ajaran','hari','guru','mata_pelajaran','kelas'));
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -58,6 +60,7 @@ class JadwalPelajaran extends Controller
     {
         $data = new Jadwal_pelajaran;
         $data->kelas_id = $request->kelas;
+        $data->tahun_ajaran_id = $request->tahun_ajaran;
         $data->mata_pelajaran_id = $request->mata_pelajaran;
         $data->guru_id = $request->guru;
         $data->hari_id = $request->hari;

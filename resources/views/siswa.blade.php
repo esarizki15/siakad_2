@@ -21,7 +21,7 @@
                   <div class="card-header main">
                      <h3 class="card-title">
                         <a href="{{url('/siswa/add')}}" class="btn btn-info bg-gradient-primary btn-sm pull-right"><i class="fa fa-plus-circle"></i> Tambah Siswa</a>
-                        <a href="" class="btn btn-info bg-gradient-primary btn-sm pull-right"><i class="fa fa-download"></i> Export</a>
+                        <a href="#" class="btn btn-info bg-gradient-primary btn-sm pull-right" data-toggle="modal" data-target="#modal-lg"><i class="fa fa-download"></i> Export</a>
                         <a href="" class="btn btn-info bg-gradient-primary btn-sm pull-right"><i class="fa fa-upload"></i> Import</a>
                         <a href="{{url('/guru/recovery/')}}" class="btn btn-info bg-gradient-primary btn-sm pull-right"><i class="fa fa-trash"></i> Data Terhapus</a>
                      </h3>
@@ -63,5 +63,33 @@
          </div>
       </div>
    </section>
+</div>
+
+<div class="modal fade" id="modal-lg">
+   <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+         <div class="modal-header">
+            <div class="modal-title"><i class="far fa-file-excel"></i> Export Data</div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+            </button>
+         </div>
+         <div class="modal-body">
+         <form action="{{url('siswa/export/')}}" method="post">
+         @csrf
+            <div class="form-group">
+               <select name="kelas_id" id="" class="form-control">
+                  @foreach($kelas as $row)
+                  <option value="{{$row->kelas_id}}">{{$row->nama_kelas}}</option>
+                  @endforeach
+               </select>
+            </div>
+            <div class="form-group">
+               <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-download"></i> Download</button>            
+            </div>  
+         </div>
+         </form>
+      </div>
+   </div>
 </div>
 @endsection

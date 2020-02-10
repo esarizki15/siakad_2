@@ -24,4 +24,8 @@ class Kelas extends Model
 	function walikelas(){
 		return $this->hasOne('App\Walikelas','kelas_id');
 	}
+
+	function jadwal_pelajaran(){
+		return $this->hasOne('App\Jadwal_pelajaran','kelas_id');
+	}
 }
