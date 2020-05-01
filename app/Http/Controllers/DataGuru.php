@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Guru;
 use App\Jenjang_pendidikan;
@@ -55,6 +56,10 @@ class DataGuru extends Controller
             $data->foto = "some files";
             $data->status = $request->status;
             $data->deleted = 'N';
+            $data->tempat_lahir = $request->tempat_lahir;
+            $data->tanggal_lahir = $request->tanggal_lahir;
+            $data->agama = $request->agama;
+            $data->jk_guru = $request->jk;
             $data->username = $request->nik;
             $data->password = bcrypt($request->nik);
             $data->save();
@@ -98,7 +103,7 @@ class DataGuru extends Controller
      */
     public function show($id)
     {
-        $data = Guru::find($id);
+        $data = Guru::leftJoin('jenjang_pendidikan','jenjang_pendidikan.jp_id','=','guru.jp_id')->find($id);
         return response()->json($data);
     }
 
@@ -134,6 +139,10 @@ class DataGuru extends Controller
         $data->jp_id = $request->jp_id;
         $data->foto = "some files";
         $data->status = $request->status;
+        $data->tempat_lahir = $request->tempat_lahir;
+        $data->tanggal_lahir = $request->tanggal_lahir;
+        $data->agama = $request->agama;
+        $data->jk_guru = $request->jk;
         // $data->username = $request->nik;
         // $data->password = bcrypt($request->nik);
         $data->save();

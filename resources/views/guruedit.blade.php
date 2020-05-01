@@ -50,6 +50,14 @@
                         <input value="{{$guru->telepon}}" required type="text" name="telepon" class="form-control"  placeholder="Telepon">
                      </div>
                      <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1">Tempat Lahir</label>
+                        <input value="{{$guru->tempat_lahir}}" required type="text" name="tempat_lahir" class="form-control" id="exampleInputEmail1" placeholder="Tempat Lahir">
+                     </div>
+                     <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1">Tanggal Lahir</label>
+                        <input value="{{$guru->tanggal_lahir}}" required type="date" name="tanggal_lahir" class="form-control" id="exampleInputEmail1" placeholder="Telepon">
+                     </div>
+                     <div class="form-group col-md-6">
                         <label for="exampleInputPassword1">Pilih Jenjang Pendidikan</label>
                         <select name="jp_id" class="form-control">
                            <option value="{{$guru->jp_id}}">{{@$guru->jenjang_pendidikan->jenjang_pendidikan_detail}}</option>
@@ -59,6 +67,17 @@
                         </select>
                      </div>
                      <div class="form-group col-md-6">
+                        <label for="exampleInputPassword1">Agama</label>
+                        <select name="agama" class="form-control">
+                           <option selected value="{{$guru->agama}}">{{$guru->agama}}</option>
+                           <option value="Islam">Islam</option>
+                           <option value="Hindu">Hindu</option>
+                           <option value="Budha">Budha</option>
+                           <option value="Kristen">Kristen</option>
+                           <option value="Katolik">Katolik</option>
+                        </select>
+                     </div>
+                     <div class="form-group col-md-3">
                         <label for="exampleInputPassword1">Status</label><br>
                         <div class="custom-control custom-radio">
                           <input @if($guru->status=="aktif") {{"checked"}} @endif class="custom-control-input" type="radio" name="status" value="aktif" id="customRadio2" name="customRadio">
@@ -67,6 +86,17 @@
                         <div class="custom-control custom-radio">
                           <input @if($guru->status=="nonaktif") {{"checked"}} @endif class="custom-control-input" type="radio" name="status" value="nonaktif" id="customRadio1" name="customRadio">
                           <label for="customRadio1" class="custom-control-label">Tidak Aktif</label>
+                        </div>
+                     </div>
+                     <div class="form-group col-md-3">
+                        <label for="exampleInputPassword1">Jenis Kelamin</label><br>
+                        <div class="custom-control custom-radio">
+                          <input @if($guru->jk_guru=='Laki-laki') {{"checked"}} @endif class="custom-control-input" type="radio" name="jk" value="Laki-laki" id="jkl" name="customRadio">
+                          <label for="jkl" class="custom-control-label">Laki-Laki</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input @if($guru->jk_guru=='Perempuan') {{"checked"}} @endif class="custom-control-input" type="radio" name="jk" value="Perempuan" id="jkp" name="customRadio">
+                          <label for="jkp" class="custom-control-label">Perempuan</label>
                         </div>
                      </div>
                   </div>

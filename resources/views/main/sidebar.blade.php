@@ -12,6 +12,27 @@
   <link rel="stylesheet" href="{{url('plugins/toastr/toastr.min.css')}}">
   <style>
 
+    label{
+      font-size: 11pt;
+    }
+
+
+    .profile-user-img{
+      width: 200px;
+      height: 200px;
+    }
+    select option{
+      height: 60px;
+      background-color: blue;
+      color: white;
+    }
+
+    select option:hover{
+      height: 60px;
+      background-color: white;
+      color: blue;
+    }
+
     .btn{
       border-radius: 0px;
     }
@@ -26,6 +47,7 @@
 
     td{
       padding: 5px;
+      font-size: 12pt;
     }
     .kelas{
       text-transform: uppercase;
@@ -34,8 +56,14 @@
     th{
       color: white;
       font-weight: 200;
-      background-color: #888;
+      background-color: blue;
       text-align: center;
+      font-size: 12pt;
+      padding: 6px;
+    }
+
+    .modal-title{
+      font-size: 13pt;
     }
     
     .content-wrapper{
@@ -43,6 +71,11 @@
     }
     .main{
       padding: 7px;
+    }
+
+    .email{
+      font-size: 9pt;
+      margin-top: -9px;
     }
 
     /* .btn{
@@ -101,6 +134,7 @@
         </div>
         <div class="info">
           <a href="#" class="d-block">{{Auth::user()->name}}</a>
+          <a class="email" href="">adihidayat.lpg@gmail.com</a>
         </div>
       </div>
 
@@ -239,7 +273,6 @@
 <script src="{{url('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{url('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 <script src="{{url('dist/js/adminlte.js')}}"></script>
-<script src="{{url('dist/js/pages/dashboard.js')}}"></script>
 <script src="{{url('dist/js/demo.js')}}"></script>
 <script src="{{url('plugins/datatables/jquery.dataTables.js')}}"></script>
 <script src="{{url('plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
@@ -290,30 +323,16 @@
         type : 'GET',
         dataType : 'JSON',
         success:function(data){
-          var html = '';
-          var i;
-          for(i=0; i<data.length; i++){
-            html += '<div class="col-md">'+
-                      '<div class="">'+
-                        '<div class="card-body box-profile">'+
-                          '<div class="text-center">'+
-                            '<img class="profile-user-img img-fluid img-circle">'+
-                          '</div>'+
-                          '<h3 class="profile-username text-center">'+'Nina Mcintire'+'</h3>'+
-                          '<p class="text-muted text-center">'+'Software Engineer'+'</p>'+
-                          '<ul class="list-group list-group-unbordered mb-3">'+
-                            '<li class="list-group-item">'+'NIK'+'<a class="float-right">'+'1,322'+'</a>'+'</li>'+
-                            '<li class="list-group-item">'+'NUPTK'+'<a class="float-right">'+'1,322'+'</a>'+'</li>'+
-                            '<li class="list-group-item">'+'Alamat'+'<a class="float-right">'+'1,322'+'</a>'+'</li>'+
-                            '<li class="list-group-item">'+'Tempat, Tanggal Lahir'+'<a class="float-right">'+'1,322'+'</a>'+'</li>'+
-                            '<li class="list-group-item">'+'Jenis Kelamin'+'<a class="float-right">'+'1,322'+'</a>'+'</li>'+
-                            '<li class="list-group-item">'+'Agama'+'<a class="float-right">'+'1,322'+'</a></li>'+
-                          '</ul>'+
-                        '</div>'+
-                      '</div>'+
-                    '</div>'
-          }
-          $('#profileguru').html(html);
+          $('.modal-title').text("Detail Guru");
+          console.log(data);
+          $('#nama_guru').text(data.nama_lengkap);
+          $('#nik').text(data.nip);
+          $('#nuptk').text(data.nip);
+          $('#alamat').text(data.alamat);
+          $('#ttl').text(data.tempat_lahir+',' + ' ' + data.tanggal_lahir);
+          $('#jk').text(data.jk_guru);
+          $('#agama').text(data.agama);
+          $('#jenjang_pendidikan').text(data.jenjang_pendidikan);
         },
         error:function(response){
           console.log(response);

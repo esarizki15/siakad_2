@@ -52,7 +52,7 @@
                               @if($row->status=="aktif")
                               <span class="badge badge-primary" style="text-transform:uppercase;">{{$row->status}}</span>
                               @else
-                              <span class="badge badge-danger" style="text-transform:uppercase;">{{$row->status}}</span>
+                              <span class="badge badge-danger" style="text-transform:uppercase;">N / A</span>
                               @endif
                            </td>
                             <td class="text-center">
@@ -73,16 +73,38 @@
 </div>
 
 <div class="modal fade" id="modal-lg">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-md">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Large Modal</h4>
+              <h4 class="modal-title"></h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-               <div id="profileguru"></div>
+            
+            <div class="col-md">
+                      <div class="">
+                        <div class="card-body box-profile">
+                           <div class="text-center">
+                           <img src="http://127.0.0.1:8000/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                           </div>
+                           <h3 class="profile-username text-center"></h3>
+                           <p class="text-muted text-center" id="nama_guru"></p>
+                           <ul class="list-group list-group-unbordered mb-3">
+                              <li class="list-group-item">NIK<a class="float-right" id="nik"></a></li>
+                              <li class="list-group-item">NUPTK<a class="float-right" id="nuptk"></a></li>
+                              <li class="list-group-item">Alamat<a class="float-right" id="alamat"></a></li>
+                              <li class="list-group-item">Tempat, Tanggal Lahir<a class="float-right" id="ttl"></a></li>
+                              <li class="list-group-item">Jenis Kelamin<a class="float-right" id="jk"></a></li>
+                              <li class="list-group-item">Agama<a class="float-right" id="agama"></a></li>
+                              <li class="list-group-item">Jenjang Pendidikan<a class="float-right" id="jenjang_pendidikan"></a></li>
+                              <li class="list-group-item">Jurusan<a class="float-right" id="jurusan"></a></li>
+
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
                
             </div>
           </div>

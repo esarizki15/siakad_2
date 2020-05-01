@@ -26,6 +26,10 @@ class CreateGuruTable extends Migration
             $table->string('username');
             $table->string('password');
             $table->string('deleted');
+            $table->string('agama');
+            $table->string('jk_guru');
+            $table->string('tempat_lahir');
+            $table->date('tanggal_lahir');
             $table->boolean('aktif')->default(true);
             $table->timestamps();
         });
