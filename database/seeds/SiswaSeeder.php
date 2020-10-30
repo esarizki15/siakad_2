@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\User;
 class SiswaSeeder extends Seeder
 {
     /**
@@ -23,5 +23,10 @@ class SiswaSeeder extends Seeder
                 'password' => $faker->address,
             ]);
         }
+        $user = new User();
+        $user->name = "Admin";
+        $user->email = "admin@gmail.com";
+        $user->password = bcrypt("rahasia");
+        $user->save();
     }
 }
